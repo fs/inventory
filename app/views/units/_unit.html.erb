@@ -1,3 +1,9 @@
-<%= link_to(unit.inv_id_with_name, unit_path(unit)) %>
+<%= link_to(unit.inv_id_with_name, edit_unit_path(unit)) %>
 <%= unit.description %>
-<%= unit_location(unit) %>
+
+<% if unit.on_depot? %>
+  <%= link_to('on depot', on_depot_units_path) %>
+<% else %>
+  in <%= link_to(unit.room.name, room_path(unit.room)) %>
+  owned by <%= link_to(unit.user.full_name_with_email, user_units_path(unit.user)) %>
+<% end %>

@@ -36,7 +36,7 @@ Feature: Manage units
 
   Scenario: Create new unit with valid data
     Given I am logged in as "me@timurv.ru/123456"
-    And a room exists with name: "202"
+    And a room: "202" exists with name: "202"
     And I am on the new unit page
     When I fill in "Inv ID" with "1"
     And I select "Box" from "Type"
@@ -46,12 +46,12 @@ Feature: Manage units
     And I select "User name (me@timurv.ru)" from "User"
     And I press "Create"
     Then I should be on the units page
-    And I should see "Mac mini"
     And I should see "Unit was successfully created."
+    And a unit should exist with inv_id: 1, name: "Mac mini", user: user "admin", room: room "202"
 
   Scenario: Create new unit with empty inv_id
     Given I am logged in as "me@timurv.ru/123456"
-    And a room exists with name: "202"
+    And a room: "202" exists with name: "202"
     And I am on the new unit page
     When I fill in "Inv ID" with ""
     And I select "Box" from "Type"
@@ -61,14 +61,15 @@ Feature: Manage units
     And I select "User name (me@timurv.ru)" from "User"
     And I press "Create"
     Then I should be on the units page
-    And I should see "Mac mini"
+    And a unit should exist with name: "Mac mini", user: user "admin", room: room "202"
     And I should see "Unit was successfully created."
 
   Scenario: Create new unit with invalid data
     Given I am logged in as "me@timurv.ru/123456"
     And I am on the new unit page
-    When I fill in "Inv ID" with ""
+    When I fill in "Name" with "Mac mini"
     And I press "Create"
+    And a unit should not exist with name: "Mac mini"
     And I should see "prohibited this unit from being saved"
 
  Scenario: Updating unit with valid data
@@ -78,8 +79,8 @@ Feature: Manage units
     And I fill in "Name" with "PC Box"
     And I press "Update Unit"
     Then I should be on the units page
+    And a unit: "unit1" should exist with name: "PC box"
     And I should see "Unit was successfully updated."
-    And I should see "PC Box"
 
  Scenario: Updating unit with invalid data
     Given I am logged in as "me@timurv.ru/123456"
@@ -87,7 +88,18 @@ Feature: Manage units
     And I am on the edit unit page with id: 1
     And I fill in "Name" with ""
     And I press "Update Unit"
+    And a unit: "unit1" should exist with name: "Mac mini"
     And I should see "prohibited this unit from being saved"
+
+ Scenario: Placing unit on depot
+    Given I am logged in as "me@timurv.ru/123456"
+    And a user: "user1" exists
+    And a unit: "unit1" exists with name: "Mac mini", user: user "user1", on_depot: false, id: 1
+    And I am on the edit unit page with id: 1
+    When I check "On depot"
+    And I press "Update Unit"
+    Then I should be on the units page
+    And a unit: "unit1" should be on depot
 
  Scenario: Deleting unit
     Given I am logged in as "me@timurv.ru/123456"
@@ -95,4 +107,4 @@ Feature: Manage units
     And I am on the units page
     When I follow "Destroy"
     Then I should be on the units page
-    And I should not see "Mac mini"
+    And a unit: "unit1" should not exist

@@ -1,0 +1,24 @@
+<h1><%= @user.full_name_with_email %></h1>
+
+<% if @on_depot_units.blank? %>
+  No free units.
+<% else %>
+  <%= form_for :unit do |f| %>
+    <%= f.collection_select :id, Unit.on_depot, :id, :inv_id_with_name, {:promt => true} %>
+    <%= f.submit 'Assign selected unit with user', :disable_with => 'Please, wait...' %>
+  <% end %>
+<% end %>
+
+<br />
+
+<% @user.units.each do |unit| %>
+  <div class="field">
+    <%= render :partial => unit %>
+
+    <%= link_to 'On depot', user_unit_path(@user, unit), :confirm => 'Are you sure?', :method => :delete %>
+  </div>
+<% end %>
+
+<br />
+
+<%= link_to 'Back', users_path %>

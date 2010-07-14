@@ -7,6 +7,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.trackable
       t.timestamps
       t.string :full_name
+      t.boolean :admin, :default => false
     end
 
     add_index :users, :email,                :unique => true

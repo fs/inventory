@@ -4,7 +4,7 @@
 
 <% @users.each do |user| %>
   <%= div_for(user, :class => 'field') do %>
-    <%= link_to(user_path(user)) do %>
+    <%= link_to(user_units_path(user)) do %>
       <%= user.full_name_with_email %>, <%= pluralize(user.units.count, 'unit') %>
     <% end %>
     <br />

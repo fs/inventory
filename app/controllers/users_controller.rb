@@ -8,15 +8,6 @@ class UsersController < ApplicationController
     end
   end
 
-  # GET /users/1
-  def show
-    @user = User.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-    end
-  end
-
   # DELETE /users/1
   def destroy
     @user = User.find(params[:id])

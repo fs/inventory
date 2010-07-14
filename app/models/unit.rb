@@ -12,6 +12,7 @@ class Unit < ActiveRecord::Base
   validates :user_id, :presence => true
 
   before_validation :generate_next_inv_id
+  before_save :reassign_user_if_on_depot
 
   has_state :unit_type, :with => APP_CONFIG['unit_types']
 
@@ -23,5 +24,22 @@ class Unit < ActiveRecord::Base
     if inv_id.blank?
       self.inv_id = self.class.maximum(:inv_id).to_i + 1
     end
+  end
+
+  def reassign_user_if_on_depot
+    if on_depot?
+      self.user = User.admin.first
+    end
+  end
+
+  def assign_to_user!(user)
+    self.on_depot = false
+    self.user = user
+    save
+  end
+
+  def place_on_depot!
+    self.on_depot = true
+    save
   end
 end

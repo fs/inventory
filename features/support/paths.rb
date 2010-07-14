@@ -24,6 +24,8 @@ module NavigationHelpers
       room_path(:id => $1)
     when /^the user page with id: (\d+)$/i
       user_path(:id => $1)
+    when /^the user units page with id: (\d+)$/i
+      user_units_path(:user_id => $1)
 
     else
       begin

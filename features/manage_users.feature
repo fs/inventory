@@ -26,14 +26,6 @@ Feature: Manage users
     And I should see "Peter"
     And I should not see "Ivan"
 
- Scenario: Viewing user with units
-    Given I am logged in as "me@timurv.ru/123456"
-    And a user: "Ivan" exists with full_name: "Ivan", id: 2
-    And a unit exists with name: "iMac", user: user "Ivan"
-    And I am on the user page with id: 2
-    Then I should see "Ivan"
-    Then I should see "iMac"
-
  Scenario: Deleting user without units
     Given I am logged in as "me@timurv.ru/123456"
     And a user: "Ivan" exists with full_name: "Ivan", id: 2
@@ -41,6 +33,7 @@ Feature: Manage users
     When I follow "Destroy" within "div#user_2"
     Then I should be on the users page
     And I should not see "Ivan"
+    # And a user: "Ivan" should not exist
 
  # We fetching url directly b/c Destory link hidden
  #
@@ -50,5 +43,5 @@ Feature: Manage users
     And a unit exists with name: "iMac", user: user "Ivan"
     When I send "DELETE" request to the user page with id: 2
     Then I should be on the users page
-    And I should see "Ivan"
+    And a user: "Ivan" should exist
     And I should see "You can't delete user full of units"

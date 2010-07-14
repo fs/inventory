@@ -10,6 +10,6 @@ class ApplicationController < ActionController::Base
     params[:search] ||= {}
 
     return scope.search_for(params[:search][:query]).paginate(:per_page => 10, :page => params[:page]),
-           OpenStruct.new(:query => params[:search][:query])
+           ::OpenStruct.new(:query => params[:search][:query])
   end
 end
