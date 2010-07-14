@@ -117,7 +117,7 @@ pre {
   overflow: auto;
 }
 
-div.field {
+div.field, div.actions {
   margin-bottom: 12px;
 }
 
@@ -127,10 +127,6 @@ div.field label {
 
 div.field.checkbox label {
   font-weight: normal;
-}
-
-div.field, div.actions {
-  margin-bottom: 10px;
 }
 
 input { margin: 0; padding: 0; }

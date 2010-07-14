@@ -1,7 +1,7 @@
 <h1>Listing units</h1>
 
 <% @units.each do |unit| %>
-  <div>
+  <div class="field">
     <%= link_to(unit_path(unit)) do %>
       #<%= unit.inv_id %> <%= unit.name %>
     <% end %>
