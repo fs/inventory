@@ -20,6 +20,10 @@ Given /^(?:|I )am on (.+)$/ do |page_name|
   visit path_to(page_name)
 end
 
+When /^I send "(GET|POST|PUT|DELETE)" request to (.+)$/ do |method, page_name|
+  Capybara.current_session.driver.process(method.downcase.to_sym, path_to(page_name))
+end
+
 When /^(?:|I )go to (.+)$/ do |page_name|
   visit path_to(page_name)
 end

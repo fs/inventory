@@ -1,0 +1,9 @@
+<h1><%= @user.full_name_with_email %></h1>
+
+<% @user.units.each do |unit| %>
+  <div class="field">
+    <%= render :partial => unit %>
+  </div>
+<% end %>
+
+<%= link_to 'Back', users_path %>

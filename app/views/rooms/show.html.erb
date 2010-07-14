@@ -4,7 +4,7 @@
 
 <% @room.units.each do |unit| %>
   <div class="field">
-    <%= link_to(unit.inv_id_with_name, edit_unit_path(unit)) %>
+    <%= render :partial => unit %>
   </div>
 <% end %>
 

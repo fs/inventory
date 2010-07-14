@@ -1,4 +1,6 @@
 class Unit < ActiveRecord::Base
+  include Pacecar
+
   belongs_to :user
   belongs_to :room
 
@@ -11,12 +13,10 @@ class Unit < ActiveRecord::Base
 
   before_validation :generate_next_inv_id
 
+  has_state :unit_type, :with => APP_CONFIG['unit_types']
+
   def inv_id_with_name
     "##{inv_id}, #{name}"
-  end
-
-  def place
-    on_depot? ? 'on depot' : "in #{room.name} owned by #{user.full_name_with_email}"
   end
 
   def generate_next_inv_id

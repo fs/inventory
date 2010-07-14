@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(:version => 20100714114242) do
     t.text     "description"
     t.integer  "user_id"
     t.string   "room_id"
-    t.boolean  "on_depot"
+    t.boolean  "on_depot",    :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

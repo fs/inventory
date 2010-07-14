@@ -1,0 +1,6 @@
+<%= form_for :search, :html => {:method => :get} do |f| %>
+  <div class="field">
+    <%= f.text_field :query %>
+    <%= f.submit 'Search' %>
+  </div>
+<% end %>

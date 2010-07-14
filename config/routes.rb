@@ -4,7 +4,10 @@ Inventory::Application.routes.draw do |map|
   match 'logout', :to  => 'devise/sessions#destroy', :as => 'destroy_user_session'
   match 'signup', :to => 'devise/registrations#new', :as => 'new_user_registration'
 
-  resources :units
+  resources :units do
+    get :on_depot, :on => :collection
+  end
   resources :rooms
+  resources :users
   root :to => 'home#index'
 end

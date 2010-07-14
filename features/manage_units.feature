@@ -10,6 +10,30 @@ Feature: Manage units
     Then I should see "Mac mini"
     And I should see "PC box"
 
+  Scenario: Listing units on depot
+    Given I am logged in as "me@timurv.ru/123456"
+    And a unit: "unit1" exists with name: "Mac mini", on_depot: true
+    And a unit: "unit2" exists with name: "PC box", on_depot: false
+    And I am on the on depot units page
+    Then I should see "Mac mini"
+    And I should not see "PC box"
+
+  Scenario: Searching units
+    Given I am logged in as "me@timurv.ru/123456"
+    And a unit: "unit1" exists with name: "Mac mini"
+    And a unit: "unit2" exists with name: "PC box"
+    And I am on the units page
+    When I fill in "search_query" with "Mac"
+    And I press "Search"
+    Then the "search_query" field should contain "Mac"
+    And I should see "Mac mini"
+    And I should not see "PC box"
+    When I fill in "search_query" with "PC"
+    And I press "Search"
+    Then the "search_query" field should contain "PC"
+    And I should see "PC box"
+    And I should not see "Mac mini"
+
   Scenario: Create new unit with valid data
     Given I am logged in as "me@timurv.ru/123456"
     And a room exists with name: "202"

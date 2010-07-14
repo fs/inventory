@@ -60,12 +60,13 @@ Feature: Manage rooms
     Then I should be on the rooms page
     And I should not see "202"
 
+ # We fetching url directly b/c Destory link hidden
+ #
  Scenario: Deleting room with units
     Given I am logged in as "me@timurv.ru/123456"
-    And a room: "202" exists with name: "202"
+    And a room: "202" exists with name: "202", id: 1
     And a unit exists with room: room "202", user: user "current_user"
-    And I am on the rooms page
-    When I follow "Destroy"
+    When I send "DELETE" request to the room page with id: 1
     Then I should be on the rooms page
     And I should see "202"
     And I should see "You can't delete room full of units"

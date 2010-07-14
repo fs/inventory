@@ -1,14 +1,7 @@
 <h1>Listing units</h1>
 
-<% @units.each do |unit| %>
-  <div class="field">
-    <%= link_to(unit.inv_id_with_name, unit_path(unit)) %>
-    <%= unit.description %> <%= unit.place %>
-
-    <br />
-    <%= link_to 'Edit', edit_unit_path(unit) %> | <%= link_to 'Destroy', unit, :confirm => 'Are you sure?', :method => :delete %>
-  </div>
-<% end %>
+<%= render 'layouts/search' %>
+<%= render 'list' %>
 
 <br />
 

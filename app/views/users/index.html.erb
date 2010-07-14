@@ -1,17 +1,17 @@
 <h1>Listing users</h1>
 
-<% @users.each do |user| %>
-  <div class="field">
-    <%= link_to(user_path(user)) do %>
-      #<%= unit.inv_id %> <%= unit.name %>
-    <% end %>
-    <%= unit.description %> <%= unit.place %>
+<%= render 'layouts/search' %>
 
+<% @users.each do |user| %>
+  <%= div_for(user, :class => 'field') do %>
+    <%= link_to(user_path(user)) do %>
+      <%= user.full_name_with_email %>, <%= pluralize(user.units.count, 'unit') %>
+    <% end %>
     <br />
-    <%= link_to 'Edit', edit_unit_path(unit) %> | <%= link_to 'Destroy', unit, :confirm => 'Are you sure?', :method => :delete %>
-  </div>
+    <% if user.deletable? %>
+      <%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %>
+    <% end %>
+  <% end %>
 <% end %>
 
-<br />
-
-<%= link_to 'New Unit', new_unit_path %>
+<%= will_paginate @posts %>

@@ -2,10 +2,14 @@
 
 <% @rooms.each do |room| %>
   <div class="field">
-    <%= link_to(room.name, room_path(room)) %>
+    <%= link_to(room_path(room)) do %>
+      <%= room.name %> (<%= pluralize(room.units.count, 'unit') %>)
+    <% end %>
     <br />
-    <%= link_to 'Edit', edit_room_path(room) %> |
-    <%= link_to 'Destroy', room, :confirm => 'Are you sure?', :method => :delete %>
+    <%= link_to 'Edit', edit_room_path(room) %>
+    <% if room.deletable? %>
+      | <%= link_to 'Destroy', room, :confirm => 'Are you sure?', :method => :delete %>
+    <% end %>
   </div>
 <% end %>
 

@@ -1,16 +1,25 @@
 class UnitsController < ApplicationController
   # GET /units
   def index
-    @units = Unit.all
+    @units, @search = search(Unit.not_on_depot)
 
     respond_to do |format|
       format.html # index.html.erb
     end
   end
 
+  # GET /units/on_depot
+  def on_depot
+    @units, @search = search(Unit.on_depot)
+
+    respond_to do |format|
+      format.html
+    end
+  end
+
   # GET /units/new
   def new
-    @unit = Unit.new(:room_id => params[:room_id].to_i)
+    @unit = Unit.new(:room_id => params[:room_id].to_i, :on_depot => params[:on_depot])
 
     respond_to do |format|
       format.html # new.html.erb

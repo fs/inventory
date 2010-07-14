@@ -7,7 +7,7 @@ class CreateUnits < ActiveRecord::Migration
       t.text :description
       t.integer :user_id
       t.string :room_id
-      t.boolean :on_depot
+      t.boolean :on_depot, :default => false
 
       t.timestamps
     end

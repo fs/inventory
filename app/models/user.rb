@@ -1,4 +1,8 @@
 class User < ActiveRecord::Base
+  include Pacecar
+
+  has_many :units
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
@@ -7,5 +11,9 @@ class User < ActiveRecord::Base
 
   def full_name_with_email
     "#{self[:full_name]} (#{email})"
+  end
+
+  def deletable?
+    units.count == 0
   end
 end
