@@ -9,7 +9,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100713113845) do
+ActiveRecord::Schema.define(:version => 20100714114242) do
+
+  create_table "rooms", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "units", :force => true do |t|
     t.string   "unit_type"
@@ -17,14 +23,14 @@ ActiveRecord::Schema.define(:version => 20100713113845) do
     t.string   "name"
     t.text     "description"
     t.integer  "user_id"
-    t.string   "room"
+    t.string   "room_id"
     t.boolean  "on_depot"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "units", ["inv_id"], :name => "index_units_on_inv_id"
-  add_index "units", ["room"], :name => "index_units_on_room"
+  add_index "units", ["room_id"], :name => "index_units_on_room_id"
   add_index "units", ["user_id"], :name => "index_units_on_user_id"
 
   create_table "users", :force => true do |t|

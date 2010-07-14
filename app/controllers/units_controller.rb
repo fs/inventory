@@ -10,7 +10,7 @@ class UnitsController < ApplicationController
 
   # GET /units/new
   def new
-    @unit = Unit.new
+    @unit = Unit.new(:room_id => params[:room_id].to_i)
 
     respond_to do |format|
       format.html # new.html.erb

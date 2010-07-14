@@ -1,8 +1,10 @@
-<h1>Listing units</h1>
+<h1>Listing users</h1>
 
-<% @units.each do |unit| %>
+<% @users.each do |user| %>
   <div class="field">
-    <%= link_to(unit.inv_id_with_name, unit_path(unit)) %>
+    <%= link_to(user_path(user)) do %>
+      #<%= unit.inv_id %> <%= unit.name %>
+    <% end %>
     <%= unit.description %> <%= unit.place %>
 
     <br />

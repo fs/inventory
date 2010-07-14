@@ -6,14 +6,14 @@ class CreateUnits < ActiveRecord::Migration
       t.string :name
       t.text :description
       t.integer :user_id
-      t.string :room
+      t.string :room_id
       t.boolean :on_depot
 
       t.timestamps
     end
 
     add_index(:units, :user_id)
-    add_index(:units, :room)
+    add_index(:units, :room_id)
     add_index(:units, :inv_id, :uniq => true)
   end
 

@@ -5,5 +5,6 @@ Inventory::Application.routes.draw do |map|
   match 'signup', :to => 'devise/registrations#new', :as => 'new_user_registration'
 
   resources :units
+  resources :rooms
   root :to => 'home#index'
 end

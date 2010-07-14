@@ -16,6 +16,7 @@
           <%= link_to 'Home', root_path %>
           <% if user_signed_in? %>
             <%= link_to 'Units', units_path %>
+            <%= link_to 'Rooms', rooms_path %>
           <% end %>
           <div style="float: right;">
             <% if user_signed_in? %>

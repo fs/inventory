@@ -12,12 +12,13 @@ Feature: Manage units
 
   Scenario: Create new unit with valid data
     Given I am logged in as "me@timurv.ru/123456"
+    And a room exists with name: "202"
     And I am on the new unit page
     When I fill in "Inv ID" with "1"
     And I select "Box" from "Type"
     And I fill in "Name" with "Mac mini"
     And I fill in "Description" with "Some desc"
-    And I fill in "Room" with "Some room"
+    And I select "202" from "Room"
     And I select "User name (me@timurv.ru)" from "User"
     And I press "Create"
     Then I should be on the units page
@@ -26,12 +27,13 @@ Feature: Manage units
 
   Scenario: Create new unit with empty inv_id
     Given I am logged in as "me@timurv.ru/123456"
+    And a room exists with name: "202"
     And I am on the new unit page
     When I fill in "Inv ID" with ""
     And I select "Box" from "Type"
     And I fill in "Name" with "Mac mini"
     And I fill in "Description" with "Some desc"
-    And I fill in "Room" with "Some room"
+    And I select "202" from "Room"
     And I select "User name (me@timurv.ru)" from "User"
     And I press "Create"
     Then I should be on the units page

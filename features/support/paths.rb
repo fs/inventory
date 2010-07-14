@@ -12,6 +12,10 @@ module NavigationHelpers
       '/'
     when /^the edit unit page with id: (\d+)$/i
       edit_unit_path(:id => $1)
+    when /^the edit room page with id: (\d+)$/i
+      edit_room_path(:id => $1)
+    when /^the room page with id: (\d+)$/i
+      room_path(:id => $1)
 
     else
       begin

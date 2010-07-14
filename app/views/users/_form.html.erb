@@ -32,8 +32,8 @@
     <%= f.collection_select :user_id, User.all, :id, :full_name_with_email %>
   </div>
   <div class="field">
-    <%= f.label :room_id, 'Room' %><br />
-    <%= f.collection_select :room_id, Room.all, :id, :name %>
+    <%= f.label :room %><br />
+    <%= f.text_field :room %>
   </div>
   <div class="field">
     <%= f.check_box :on_depot %>

@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= @room.name %></h1>
+
+<% @room.units.each do |unit| %>
+  <div class="field">
+    <%= link_to(unit.inv_id_with_name, edit_unit_path(unit)) %>
+  </div>
+<% end %>
+
+<%= link_to 'Add unit', new_unit_path(:room_id => @room) %> |
+<%= link_to 'Edit', edit_room_path(@room) %> |
+<%= link_to 'Back', rooms_path %>
