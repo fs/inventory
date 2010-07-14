@@ -21,6 +21,21 @@ Feature: Manage units
     And I select "User name (me@timurv.ru)" from "User"
     And I press "Create"
     Then I should be on the units page
+    And I should see "Mac mini"
+    And I should see "Unit was successfully created."
+
+  Scenario: Create new unit with empty inv_id
+    Given I am logged in as "me@timurv.ru/123456"
+    And I am on the new unit page
+    When I fill in "Inv ID" with ""
+    And I select "Box" from "Type"
+    And I fill in "Name" with "Mac mini"
+    And I fill in "Description" with "Some desc"
+    And I fill in "Room" with "Some room"
+    And I select "User name (me@timurv.ru)" from "User"
+    And I press "Create"
+    Then I should be on the units page
+    And I should see "Mac mini"
     And I should see "Unit was successfully created."
 
   Scenario: Create new unit with invalid data
