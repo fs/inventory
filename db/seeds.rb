@@ -1,5 +1,5 @@
-user1 = User.create(:full_name => 'Timur Vafin', :email => 'me@timurv.ru', :password => '123456', :admin => true)
-user2 = User.create(:full_name => 'Test User', :email => 'me2@timurv.ru', :password => '123456', :admin => false)
+user1 = User.create(:full_name => 'Timur Vafin', :email => 'me@timurv.ru', :password => '123456')
+user2 = User.create(:full_name => 'Test User', :email => 'me2@timurv.ru', :password => '123456')
 
 %W(101 102 103 104 200 201 202 202A 203).each do |room_name|
   room = Room.create(:name => room_name)
