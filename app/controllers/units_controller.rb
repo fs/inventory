@@ -1,7 +1,7 @@
 class UnitsController < ApplicationController
   # GET /units
   def index
-    @units, @search = search(Unit.not_on_depot)
+    @units, @search = search(Unit.not_on_depot.includes(:user, :room))
 
     respond_to do |format|
       format.html # index.html.erb
@@ -10,7 +10,7 @@ class UnitsController < ApplicationController
 
   # GET /units/on_depot
   def on_depot
-    @units, @search = search(Unit.on_depot)
+    @units, @search = search(Unit.on_depot.includes(:user, :room))
 
     respond_to do |format|
       format.html

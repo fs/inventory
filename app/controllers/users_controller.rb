@@ -1,3 +1,5 @@
+require 'ostruct'
+
 class UsersController < ApplicationController
   # GET /users
   def index

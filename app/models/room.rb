@@ -3,6 +3,6 @@ class Room < ActiveRecord::Base
   has_many :units
 
   def deletable?
-    units.count == 0
+    units.size == 0
   end
 end

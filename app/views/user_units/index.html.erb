@@ -11,13 +11,17 @@
 
 <br />
 
-<% @user.units.each do |unit| %>
+<%= render 'layouts/search' %>
+
+<% @user_units.each do |unit| %>
   <div class="field">
     <%= render :partial => unit %>
 
     <%= link_to 'On depot', user_unit_path(@user, unit), :confirm => 'Are you sure?', :method => :delete %>
   </div>
 <% end %>
+
+<%= will_paginate @user_units %>
 
 <br />
 

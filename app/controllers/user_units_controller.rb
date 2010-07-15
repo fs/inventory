@@ -1,8 +1,12 @@
+require 'ostruct'
+
 class UserUnitsController < ApplicationController
+  before_filter :load_user
+
   # GET /users/1/units
   def index
-    @user = user
-    @on_depot_units = Unit.on_depot
+    @on_depot_units = Unit.on_depot.includes(:user, :room)
+    @user_units, @search = search(@user.units.includes(:user, :room))
 
     respond_to do |format|
       format.html # index.html.erb
@@ -11,7 +15,6 @@ class UserUnitsController < ApplicationController
 
   # POST /users/1/units
   def create
-    @user = user
     @unit = Unit.find(params[:unit][:id])
 
     respond_to do |format|
@@ -29,13 +32,13 @@ class UserUnitsController < ApplicationController
     @unit.place_on_depot!
 
     respond_to do |format|
-      format.html { redirect_to(user_units_path(user), :notice => 'Unit placed on depot.') }
+      format.html { redirect_to(user_units_path(@user), :notice => 'Unit placed on depot.') }
     end
   end
 
   private
 
-  def user
-    @user ||= User.find(params[:user_id])
+  def load_user
+    @user ||= User.includes(:units).find(params[:user_id])
   end
 end

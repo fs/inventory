@@ -1,7 +1,7 @@
 class RoomsController < ApplicationController
   # GET /rooms
   def index
-    @rooms = Room.all
+    @rooms = Room.includes(:units)
 
     respond_to do |format|
       format.html # index.html.erb

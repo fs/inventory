@@ -3,7 +3,7 @@
 <% @rooms.each do |room| %>
   <div class="field">
     <%= link_to(room_path(room)) do %>
-      <%= room.name %> (<%= pluralize(room.units.count, 'unit') %>)
+      <%= room.name %> (<%= pluralize(room.units.size, 'unit') %>)
     <% end %>
     <br />
     <%= link_to 'Edit', edit_room_path(room) %>
