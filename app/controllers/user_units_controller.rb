@@ -1,7 +1,7 @@
 require 'ostruct'
 
 class UserUnitsController < ApplicationController
-  before_filter :load_user
+  before_filter :authenticate_user!, :load_user
 
   # GET /users/1/units
   def index

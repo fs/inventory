@@ -1,6 +1,8 @@
 require 'ostruct'
 
 class UsersController < ApplicationController
+  before_filter :authenticate_user!
+
   # GET /users
   def index
     @users, @search = search(User.scoped)

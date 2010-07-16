@@ -1,4 +1,6 @@
 class RoomsController < ApplicationController
+  before_filter :authenticate_user!
+
   # GET /rooms
   def index
     @rooms = Room.includes(:units)

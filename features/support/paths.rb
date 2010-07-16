@@ -10,12 +10,6 @@ module NavigationHelpers
 
     when /the home\s?page/
       '/'
-    when /the new test page/
-      new_test_path
-
-    when /the new test page/
-      new_test_path
-
     when /^the edit unit page with id: (\d+)$/i
       edit_unit_path(:id => $1)
     when /^the edit room page with id: (\d+)$/i
