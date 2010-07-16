@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   has_many :units
 
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable, :invitable
 
   attr_accessible :full_name, :email, :password, :password_confirmation
   validates :full_name, :presence => true
