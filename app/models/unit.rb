@@ -14,8 +14,6 @@ class Unit < ActiveRecord::Base
   before_validation :generate_next_inv_id
   before_save :reassign_user_if_on_depot
 
-  has_state :unit_type, :with => APP_CONFIG['unit_types']
-
   def inv_id_with_name
     "##{inv_id}, #{name}"
   end
