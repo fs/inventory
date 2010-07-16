@@ -17,8 +17,7 @@ unless HEROKU
     gem 'factory_girl_rails'
     gem 'pickle', :git => 'git://github.com/codegram/pickle.git', :ref => '929ee633'
 
-    gem 'rspec', '2.0.0.beta.9', :require => nil
-    gem 'rspec-rails', '2.0.0.beta.9', :require => nil
+    gem "rspec-rails", ">= 2.0.0.beta.17"
     gem 'cucumber'
     gem 'cucumber-rails'
     gem 'capybara', '0.3.8'
