@@ -1,6 +1,8 @@
 require 'ostruct'
 
 class UnitsController < ApplicationController
+  before_filter :authenticate_user!
+
   # GET /units
   def index
     @units, @search = search(Unit.not_on_depot.includes(:user, :room))
