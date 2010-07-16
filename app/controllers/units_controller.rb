@@ -1,3 +1,5 @@
+require 'ostruct'
+
 class UnitsController < ApplicationController
   # GET /units
   def index
