@@ -1,9 +1,7 @@
 <% @units.each do |unit| %>
-  <div class="field">
+  <div class="unit field">
     <%= render :partial => unit %>
-
-    <br />
-    <%= link_to 'Destroy', unit, :confirm => 'Are you sure?', :method => :delete %>
+    <%= link_to 'Destroy', unit, :confirm => 'Are you sure?', :method => :delete, :class => 'destroy', :title => 'Destroy this unit' %>
   </div>
 <% end %>
 

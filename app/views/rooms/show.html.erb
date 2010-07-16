@@ -1,11 +1,12 @@
 <% title @room.name %>
 
 <% @room.units.each do |unit| %>
-  <div class="field">
+  <div class="unit field">
     <%= render :partial => unit %>
   </div>
 <% end %>
-
-<%= link_to 'Add unit', new_unit_path(:room_id => @room) %> |
-<%= link_to 'Edit', edit_room_path(@room) %> |
-<%= link_to 'Back', rooms_path %>
+<div class="actions">
+  <%= link_to 'Add unit', new_unit_path(:room_id => @room) %> 
+  <%= link_to 'Edit', edit_room_path(@room) %> 
+  <%= link_to 'Back', rooms_path %>
+</div>

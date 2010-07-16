@@ -1,12 +1,12 @@
-<div class="<%= unit.css_class %>">
+<%= link_to(unit.name, edit_unit_path(unit), :class => "icon #{unit.css_class}") %>
+<!-- todo: ICONS - ipod, box, computer, connections-->
 
-  <%= link_to(unit.inv_id_with_name, edit_unit_path(unit)) %>
-  <%= unit.description %>
+<p class="unit-name"><%= link_to(unit.inv_id_with_name, edit_unit_path(unit)) %></p>
+<p class="description"><%= unit.description %></p>
 
-  <% if unit.on_depot? %>
-    <%= link_to('on depot', on_depot_units_path) %>
-  <% else %>
-    in <%= link_to(unit.room.name, room_path(unit.room)) %>
-    owned by <%= link_to(unit.user.full_name_with_email, user_units_path(unit.user)) %>
-  <% end %>
-</div>
+<% if unit.on_depot? %>
+  <p class="on-depot"><%= link_to('on depot', on_depot_units_path) %></p>
+<% else %>
+  <p class="room">Room <%= link_to(unit.room.name, room_path(unit.room)) %></p>
+  <p class="owned">Owned by <%= link_to(unit.user.full_name, user_units_path(unit.user)) %></p>
+<% end %>

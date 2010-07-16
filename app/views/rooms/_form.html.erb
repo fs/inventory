@@ -12,10 +12,10 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :name, 'Name:' %><br />
     <%= f.text_field :name %>
   </div>
   <div class="actions">
-    <%= f.submit :disable_with => 'Please, wait...' %>
+    <%= f.submit :disable_with => 'Please, wait...' %>  <%= link_to 'Back', :back %>
   </div>
 <% end %>

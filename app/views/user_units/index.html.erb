@@ -1,7 +1,9 @@
-<% title @user.full_name_with_email %>
+<div class="user"><% title @user.full_name %></div>
+
+<%= render 'layouts/search' %>
 
 <% if @on_depot_units.blank? %>
-  No free units.
+  <p>No free units.</p>
 <% else %>
   <%= form_for :unit do |f| %>
     <%= f.collection_select :id, Unit.on_depot, :id, :inv_id_with_name, {:promt => true} %>
@@ -11,10 +13,10 @@
 
 <br />
 
-<%= render 'layouts/search' %>
+
 
 <% @user_units.each do |unit| %>
-  <div class="field">
+  <div class="unit field">
     <%= render :partial => unit %>
 
     <%= link_to 'On depot', user_unit_path(@user, unit), :confirm => 'Are you sure?', :method => :delete %>
@@ -23,6 +25,6 @@
 
 <%= will_paginate @user_units %>
 
-<br />
-
-<%= link_to 'Back', users_path %>
+<div class="actions">
+  <%= link_to 'Back', users_path %>
+</div>
