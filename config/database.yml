@@ -1,3 +1,24 @@
+## sqlite
+##
+#defaults_developmet: &defaults_developmet
+#  adapter: sqlite3
+#  pool: 5
+#  timeout: 5000
+#
+#development:
+#  database: db/development.sqlite3
+#  <<: *defaults_developmet
+#
+#test: &test
+#  database: db/test.sqlite3
+#  <<: *defaults_developmet
+#
+#test: &test
+#  database: db/cucumber.sqlite3
+#  <<: *defaults_developmet
+
+ mysql@locahost
+
 defaults_developmet: &defaults_developmet
   adapter: mysql
   encoding: utf8
