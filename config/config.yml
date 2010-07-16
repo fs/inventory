@@ -2,7 +2,7 @@ defaults: &defaults
   app_name: Inventory
   noreply: noreply@inventory.heroku.com
   host: localhost:3000
-  unit_types: ['Box', 'Monitor']
+  unit_types: [Box, Monitor, Mouse, Keyboard, Server, Notebook, Webcam, Printer, Network tools, Other]
 
 development:
   <<: *defaults
