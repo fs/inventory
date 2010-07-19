@@ -247,7 +247,7 @@ body {background:#1e1e1e;color:#fff;font:normal 14px/1 Arial, Verdana, sans-seri
         .unit.field:hover {background-image:none;}
         .unit.field a {color:#000;}
           .unit.field a.icon,
-          .unit.field a.icon.computer {
+          .unit.field a.icon.notebook {
             background:url("/images/units.png") 0 -190px no-repeat;
             width:85px;
             height:70px;
@@ -258,7 +258,14 @@ body {background:#1e1e1e;color:#fff;font:normal 14px/1 Arial, Verdana, sans-seri
             }
             .unit.field a.icon.ipod {background-position:0 0;height:85px;}
             .unit.field a.icon.box {background-position:0 -270px;}
-            .unit.field a.icon.connections {background-position:0 -95px;height:75px;}
+            .unit.field a.icon.printer {background-position:0 -95px;height:75px;} 
+            .unit.field a.icon.monitor {background-position:0 -450px}
+            .unit.field a.icon.mouse {background-position:0 -300px;}
+            .unit.field a.icon.keyboard {}
+            .unit.field a.icon.server {background-position:0 -400px;}
+            .unit.field a.icon.webcam {background-position:-450px}
+            .unit.field a.icon.network-tools {background-position:-350px;}
+            .unit.field a.icon.other {background-position:0 0;}
           .unit.field p {margin-bottom:5px;padding-left:85px;}
           .unit.field p.unit-name {margin-bottom:10px;}
           .unit.field p.unit-name a {
