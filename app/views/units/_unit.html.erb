@@ -1,9 +1,12 @@
-<%= link_to(unit.inv_id_with_name, edit_unit_path(unit)) %>
-<%= unit.description %>
+<div class="<%= unit.css_class %>">
 
-<% if unit.on_depot? %>
-  <%= link_to('on depot', on_depot_units_path) %>
-<% else %>
-  in <%= link_to(unit.room.name, room_path(unit.room)) %>
-  owned by <%= link_to(unit.user.full_name_with_email, user_units_path(unit.user)) %>
-<% end %>
+  <%= link_to(unit.inv_id_with_name, edit_unit_path(unit)) %>
+  <%= unit.description %>
+
+  <% if unit.on_depot? %>
+    <%= link_to('on depot', on_depot_units_path) %>
+  <% else %>
+    in <%= link_to(unit.room.name, room_path(unit.room)) %>
+    owned by <%= link_to(unit.user.full_name_with_email, user_units_path(unit.user)) %>
+  <% end %>
+</div>

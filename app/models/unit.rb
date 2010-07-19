@@ -40,4 +40,8 @@ class Unit < ActiveRecord::Base
     self.on_depot = true
     save
   end
+
+  def css_class
+    unit_type.parameterize
+  end
 end
