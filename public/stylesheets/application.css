@@ -248,7 +248,7 @@ body {background:#1e1e1e;color:#fff;font:normal 14px/1 Arial, Verdana, sans-seri
         .unit.field a {color:#000;}
           .unit.field a.icon,
           .unit.field a.icon.notebook {
-            background:url("/images/units.png") 0 -190px no-repeat;
+            background:url("/images/units.png") 0 -147px no-repeat;
             width:85px;
             height:70px;
             float:left;
@@ -256,8 +256,7 @@ body {background:#1e1e1e;color:#fff;font:normal 14px/1 Arial, Verdana, sans-seri
             text-indent:-9999em;
             display:block;
             }
-            .unit.field a.icon.ipod {background-position:0 0;height:85px;}
-            .unit.field a.icon.box {background-position:0 -270px;}
+            .unit.field a.icon.box {background-position:0 -216px;}
             .unit.field a.icon.printer {background-position:0 -95px;height:75px;} 
             .unit.field a.icon.monitor {background-position:0 -450px}
             .unit.field a.icon.mouse {background-position:0 -300px;}
