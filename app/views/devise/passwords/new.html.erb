@@ -3,10 +3,14 @@
 <%= form_for(resource, :as => resource_name, :url => password_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-  <p><%= f.label :email %><br />
-  <%= f.text_field :email %></p>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
 
-  <p><%= f.submit "Send me reset password instructions" %></p>
+  <div class="actions">
+    <%= f.submit "Send me reset password instructions" %>
+    <%= render :partial => "devise/shared/links" %>
+  </div>
 <% end %>
 
-<%= render :partial => "devise/shared/links" %>

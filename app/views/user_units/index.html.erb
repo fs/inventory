@@ -1,4 +1,4 @@
-<% title @user.full_name_with_email %>
+<div class="user"><% title @user.full_name %></div>
 
 <%= render 'layouts/search' %>
 
@@ -7,7 +7,7 @@
 <% else %>
   <%= form_for :unit do |f| %>
     <%= f.collection_select :id, Unit.on_depot, :id, :inv_id_with_name, {:promt => true} %>
-    <%= f.submit 'Assign selected unit with user', :disable_with => 'Please, wait...' %>
+    <%= f.submit 'Assign selected unit with user', :disable_with => 'Please, wait...', :class => 'btn' %>
   <% end %>
 <% end %>
 

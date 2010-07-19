@@ -19,10 +19,10 @@
           </div>
           <div class="menu">
             <% if user_signed_in? %>
-              Signed in as <%= link_to h(current_user.email), edit_user_registration_path %> |
+              <span class="signed-in">Signed in as <%= link_to h(current_user.email), edit_user_registration_path %></span> 
               <%= link_to 'Sign out', destroy_user_session_path %>
             <% else %>
-              <%= link_to 'Sign in', new_user_session_path %> |
+              <%= link_to 'Sign in', new_user_session_path %> 
               <%= link_to 'Sign up', new_user_registration_path %>
             <% end %>
           </div>

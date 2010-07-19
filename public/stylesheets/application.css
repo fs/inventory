@@ -1,25 +1,39 @@
-body {background:#1e1e1e;color:#fff;font:normal 13px/1 Arial, Verdana, sans-serif;}
+body {background:#1e1e1e;color:#fff;font:normal 14px/1 Arial, Verdana, sans-serif;}
   a {color:#fff;text-decoration:underline;}
   a:hover {text-decoration:none;}
   a:visited {color:#ddd;}
   #notice {
-    background:url("/images/notice.png") 10px 4px no-repeat #347d31;
+    background:url("/images/notice.png") 10px 5px no-repeat #347d31;
     color:#fff;
-    margin:14px auto 0;
-    padding:8px 39px;
+    margin:0 auto 10px;
+    padding:10px 39px;
     width:822px;
+    -webkit-border-bottom-left-radius: 10px;
+    -webkit-border-bottom-right-radius: 10px;
+    -moz-border-radius-bottomleft: 10px;
+    -moz-border-radius-bottomright: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    font-weight:bold;
   }
-  #error {
-    background:url("/images/error.png") 10px 4px no-repeat #cc0000;
+  #alert {
+    background:url("/images/error.png") 10px 5px no-repeat #cc0000;
     color:#fff;
-    margin:14px auto 0;
-    padding:8px 39px;
+    margin:0 auto 10px;
+    padding:10px 39px;
     width:822px;
+    -webkit-border-bottom-left-radius: 10px;
+    -webkit-border-bottom-right-radius: 10px;
+    -moz-border-radius-bottomleft: 10px;
+    -moz-border-radius-bottomright: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    font-weight:bold;
   }
 
 	.container {width:900px;padding:0 30px; position:relative;margin:0 auto;overflow:hidden;}
 		.header {overflow:hidden;clear:both;}
-			.header div.logo {display:block;width:198px;height:80px;padding-top:15px;float:left;margin-bottom:20px;}
+			.header div.logo {display:block;width:198px;height:80px;padding-top:15px;float:left;margin-bottom:35px;}
 				.header div.logo a {height:80px;margin-bottom:10px;display:block;text-decoration:none;}
           .header div.logo a img {
             font-size:26px;
@@ -32,9 +46,24 @@ body {background:#1e1e1e;color:#fff;font:normal 13px/1 Arial, Verdana, sans-seri
             font-family:"Arial Black";
             }
       .header div.menu {padding-top:15px;text-align:right;}
-        .header div.menu a {font-weight:bold;}
-			.header .navigation {height:40px;clear:both;font-weight:bold;font-family:"Arial Black"}
-				.header .navigation ul {overflow:hidden;display:block;height:40px;clear:both;}
+        .header div.menu a {
+          color:#fff;
+          text-transform:uppercase;
+          font-size:14px;
+          font-family:"Arial Black";
+          font-weight:bold;
+          text-decoration:underline;
+          line-height:14px;
+          padding-left:10px;
+          display:inline-block;
+          }
+          .header div.menu .signed-in a {
+            font:normal normal 14px/1em Arial, sans-serif;
+            padding-left:0;
+            text-transform:none;
+          }
+			.header .navigation {height:30px;clear:both;font-weight:bold;font-family:"Arial Black"}
+				.header .navigation ul {overflow:hidden;display:block;height:30px;clear:both;}
 				.header .navigation ul li {display:block;float:left;margin-right:2px;}
           .header .navigation ul li a {
             display:block;
@@ -44,9 +73,9 @@ body {background:#1e1e1e;color:#fff;font:normal 13px/1 Arial, Verdana, sans-seri
             background:#284257;
             text-decoration:none;
             text-transform:uppercase;
-            line-height:18px;
-            height:20px;
-            font-size:22px;
+            line-height:8px;
+            height:10px;
+            font-size:17px;
             -webkit-border-top-left-radius: 5px;
             -webkit-border-top-right-radius: 5px;
             -moz-border-radius-topleft: 5px;
@@ -62,14 +91,39 @@ body {background:#1e1e1e;color:#fff;font:normal 13px/1 Arial, Verdana, sans-seri
       background:#225667;
       padding:35px 0;
       }
-      .main h1 {
+      .main h1,
+      .main h2 {
         margin-bottom:25px;
         line-height:1;
         color:#e8e8e8;
         font-size:48px;
         font-family:"Arial Black";
         }
-        .main h1.user {font-size:23px;}
+        .main .user h1 {font-size:23px;}
+      #error_explanation {
+        margin-bottom:25px;
+        color:#d24a43;
+        font:normal normal 13px/1em Arial,sans-serif;
+        background:#fff;
+        width:620px;
+        }
+        #error_explanation h2 {
+          font:normal normal 15px/1em Arial,sans-serif;
+          margin-bottom:8px;
+          background:#d24a43;
+          color:#fff;
+          padding:5px;
+        }
+        #error_explanation ul {
+          font:normal normal 13px/15px Arial,sans-serif;
+          background:#fff;
+          padding:0 5px;
+          }
+          #error_explanation ul li {
+            background:url("/images/error_li.png") 0 0 no-repeat;
+            padding-left:22px;
+            padding-bottom:8px;
+          }
       div.search {clear:both;overflow:hidden;width:100%;margin-bottom:25px;}
 				div.search label {display:block;padding:3px 0 4px;font-size:15px;clear:both;}
 				div.search input[type="text"] {
@@ -79,11 +133,10 @@ body {background:#1e1e1e;color:#fff;font:normal 13px/1 Arial, Verdana, sans-seri
           float:left;
           display:block;
           border:1px solid #284257;
-          height:26px;
-          line-height:23px;
+          height:29px;
+          line-height:29px;
           padding:0 0 0 40px;
           margin-right:10px;
-          margin-top:1px;
         }
 				div.search input[type="submit"] {
           float:left;
@@ -100,13 +153,12 @@ body {background:#1e1e1e;color:#fff;font:normal 13px/1 Arial, Verdana, sans-seri
           -webkit-border-radius:5px;
           font-size:13px;
           }
-        div.actions {overflow:hidden;clear:both;padding-top:20px;margin-bottom:10px;}
-          div.actions a,
+        div.actions {overflow:hidden;clear:both;padding-top:20px;margin-bottom:10px;line-height:17px;}
           div.actions input,
           a.btn {
             float:left;
             display:block;
-            margin-right:10px;
+            margin-right:12px;
             background:url("/images/btn.png") 0 -1px repeat-x #959595;
             color:#000;
             border:1px solid #aeaeae;
@@ -121,10 +173,26 @@ body {background:#1e1e1e;color:#fff;font:normal 13px/1 Arial, Verdana, sans-seri
             }
             div.actions a.back {background:none;color:#fff;}
           a.btn {float:none;margin:0;}
+          input.btn {
+            display:inline-block;
+            height:24px;
+            line-height:24px;
+          }
+          div.actions a {
+            color:#fff;
+            text-transform:uppercase;
+            font-size:14px;
+            font-family:"Arial Black";
+            font-weight:bold;
+            text-decoration:underline;
+            line-height:30px;
+            padding-right:10px;
+            display:inline-block;
+          }
           
       .field {
         font-size:13px;
-        margin-bottom:10px;
+        margin-bottom:15px;
         }
         .field label {
           padding-bottom:3px;
@@ -141,7 +209,7 @@ body {background:#1e1e1e;color:#fff;font:normal 13px/1 Arial, Verdana, sans-seri
           line-height:23px;
           }
           .field input,
-          .field textarea {width:99%;padding:0 10px;}
+          .field textarea {width:600px;padding:4px 10px;}
             .field textarea {height:100px;}
             .field input[type="checkbox"],
             .field input[type="radio"] {
@@ -149,9 +217,20 @@ body {background:#1e1e1e;color:#fff;font:normal 13px/1 Arial, Verdana, sans-seri
               width:auto;
               line-height:normal;
             }
+          .error input,
+          .error textarea,
+          .error select {
+            border:1px solid #e18c44;
+          }
+          span.message {
+            background:url("/images/alert.png") 0 0 no-repeat;
+            padding-left:20px;
+            color:#e18c44;
+            font-weight:bold;
+          }
       .unit.field {
-        background:url("/images/unit.png") 0 center repeat-x #c0c0c0;
-        padding:20px 15px;
+        background:url("/images/unit.png") 0 center repeat-x #e9e9e9;
+        padding:15px;
         font-size:13px;
         margin-bottom:5px;
         border-radius:5px;
@@ -161,15 +240,47 @@ body {background:#1e1e1e;color:#fff;font:normal 13px/1 Arial, Verdana, sans-seri
         position:relative;
         color:#000;
         width:260px;
-        height:83px;
+        height:95px;
         float:left;
         margin:0 10px 10px 0;
         }
         .unit.field:hover {background-image:none;}
         .unit.field a {color:#000;}
+          .unit.field a.icon,
+          .unit.field a.icon.computer {
+            background:url("/images/units.png") 0 -190px no-repeat;
+            width:85px;
+            height:70px;
+            float:left;
+            clear:left;
+            text-indent:-9999em;
+            display:block;
+            }
+            .unit.field a.icon.ipod {background-position:0 0;height:85px;}
+            .unit.field a.icon.box {background-position:0 -270px;}
+            .unit.field a.icon.connections {background-position:0 -95px;height:75px;}
+          .unit.field p {margin-bottom:5px;padding-left:85px;}
+          .unit.field p.unit-name {margin-bottom:10px;}
+          .unit.field p.unit-name a {
+              color:#284257;
+              font-size:19px;
+              text-decoration:none;
+              font-weight:bold;
+              line-height:1;
+              font-family:"Arial Black";
+            }
+          .unit.field a.destroy {
+            position:absolute;
+            right:5px;
+            top:5px;
+            background:url("/images/close.png") 0 0 no-repeat;
+            height:24px;
+            width:24px;
+            text-indent:-9999em;
+            }
       .user.field,
       .room.field {
-        background:url("/images/unit.png") 0 center repeat-x #c0c0c0;
+        background:#1a4d5e;
         padding:15px 10px;
         font-size:13px;
         margin-bottom:5px;
@@ -181,18 +292,60 @@ body {background:#1e1e1e;color:#fff;font:normal 13px/1 Arial, Verdana, sans-seri
         margin-right:10px;
         }
         .user.field:hover,
-        .room.field:hover {background-image:none;}
+        .room.field:hover {background:#246276;}
         .user.field a {
           background:url("/images/user.png") 3px center no-repeat;
-          padding-left:30px;
-          color:#000;
+          padding-left:25px;
+          color:#fff;
           font-weight:bold;
         }
-        .room.field a {color:#000;}
+        .room.field a {color:#fff;font-weight:bold;}
         .user.field a.delete,
         .room.field a.delete {font-weight:bold;background:none;position:absolute;right:10px;padding:0;}
-
+        .room.field a.destroy {
+            position:absolute;
+            right:5px;
+            top:5px;
+            background:url("/images/close.png") 0 0 no-repeat;
+            height:24px;
+            width:24px;
+            text-indent:-9999em;
+            }
+        .room.field a.edit {
+          position:absolute;
+          top:9px;
+          right:35px;
+          color:#999;
+          font-weight:bold;
+        }
+      .cancel-account {
+        position:absolute;
+        right:60px;
+        top:0;
+        border-radius:5px;
+        -moz-border-radius:5px;
+        -webkit-border-radius:5px;
+        background:#efbf88;
+        color:#284257;
+        border:1px solid #e8e8e8;
+      }
+      .cancel-account h3 {
+        -moz-border-radius-topleft:5px;
+        -moz-border-radius-topright:5px;
+        background:url("/images/cancel.png") no-repeat scroll 5px 3px #E18C44;
+        color:#FFFFFF;
+        font-size:13px;
+        padding:12px 20px 12px 40px;
+      }
+      .cancel-account p {
+        padding:10px;
+        font-size:13px;
+        }
+        .cancel-account a {
+          color:#284257;
+          font-weight:bold;
+          }
 		.footer {padding:15px 0;background:#0e2537;clear:both;overflow:hidden;font-size:12px;line-height:1.2em;}
 			.footer .container div {float:left;width:50%;}
-			.footer p.copy {text-transform:uppercase;font-weight:bold;float:right;text-align:right;width:50%;letter-spacing:2px;font-size:13px;}
+			.footer p.copy {font-family:"Arial Black";text-transform:uppercase;font-weight:bold;float:right;text-align:right;width:50%;font-size:14px;}
 			

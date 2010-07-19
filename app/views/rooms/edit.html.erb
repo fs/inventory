@@ -1,6 +1,7 @@
 <% title 'Editing room' %>
 
 <%= render 'form' %>
-
-<%= link_to 'Show', @room %> |
-<%= link_to 'Back', rooms_path %>
+<div class="actions">
+  <%= link_to 'Show', @room %>
+  <%= link_to 'Back', rooms_path %>
+</div>
