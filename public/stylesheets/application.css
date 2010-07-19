@@ -249,7 +249,7 @@ body {background:#1e1e1e;color:#fff;font:normal 14px/1 Arial, Verdana, sans-seri
           .unit.field a.icon,
           .unit.field a.icon.notebook {
             background:url("/images/units.png") 0 -147px no-repeat;
-            width:85px;
+            width:80px;
             height:70px;
             float:left;
             clear:left;
@@ -257,15 +257,15 @@ body {background:#1e1e1e;color:#fff;font:normal 14px/1 Arial, Verdana, sans-seri
             display:block;
             }
             .unit.field a.icon.box {background-position:0 -216px;}
-            .unit.field a.icon.printer {background-position:0 -95px;height:75px;} 
-            .unit.field a.icon.monitor {background-position:0 -450px}
-            .unit.field a.icon.mouse {background-position:0 -300px;}
-            .unit.field a.icon.keyboard {}
-            .unit.field a.icon.server {background-position:0 -400px;}
-            .unit.field a.icon.webcam {background-position:-450px}
-            .unit.field a.icon.network-tools {background-position:-350px;}
-            .unit.field a.icon.other {background-position:0 0;}
-          .unit.field p {margin-bottom:5px;padding-left:85px;}
+            .unit.field a.icon.printer {background-position:0 -64px;height:75px;} 
+            .unit.field a.icon.monitor {background-position:0 -587px;height:63px;}
+            .unit.field a.icon.mouse {background-position:0 -296px;}
+            .unit.field a.icon.keyboard {background-position:0 -655px;}
+            .unit.field a.icon.server {background-position:0 -517px;}
+            .unit.field a.icon.webcam {background-position:0 -442px}
+            .unit.field a.icon.network-tools {background-position:-364px;}
+            .unit.field a.icon.other {background-position:0 3px;}
+          .unit.field p {margin-bottom:5px;padding-left:80px;}
           .unit.field p.unit-name {margin-bottom:10px;}
           .unit.field p.unit-name a {
               color:#284257;
@@ -350,6 +350,20 @@ body {background:#1e1e1e;color:#fff;font:normal 14px/1 Arial, Verdana, sans-seri
         .cancel-account a {
           color:#284257;
           font-weight:bold;
+          }
+      .pagination {
+        clear:both;
+        }
+        .pagination a {
+          color:#fff;
+          text-transform:uppercase;
+          font-size:14px;
+          font-family:"Arial Black";
+          font-weight:bold;
+          text-decoration:underline;
+          line-height:14px;
+          padding-right:10px;
+          display:inline-block;
           }
 		.footer {padding:15px 0;background:#0e2537;clear:both;overflow:hidden;font-size:12px;line-height:1.2em;}
 			.footer .container div {float:left;width:50%;}
