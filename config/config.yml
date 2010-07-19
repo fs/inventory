@@ -1,6 +1,6 @@
 defaults: &defaults
   app_name: Inventory
-  noreply: noreply@inventory.heroku.com
+  noreply: noreply@inv.flatsoft.com
   host: localhost:3000
   unit_types: [Box, Monitor, Mouse, Keyboard, Server, Notebook, Webcam, Printer, Network tools, Other]
 
