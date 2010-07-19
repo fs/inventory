@@ -5,7 +5,7 @@ class UnitsController < ApplicationController
 
   # GET /units
   def index
-    @units, @search = search(Unit.not_on_depot.includes(:user, :room))
+    @units, @search = search(Unit.not_on_depot.includes(:user, :room), 9)
 
     respond_to do |format|
       format.html # index.html.erb
