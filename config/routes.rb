@@ -14,8 +14,4 @@ Inventory::Application.routes.draw do
   
   resources :rooms
   root :to => 'home#index'
-
-  match "/env1" => proc { |env| [200, {'Content-Type' => 'text/plain'}, Rack::Request.new(env).inspect] }
-  match "/env2" => proc { |env| [200, {'Content-Type' => 'text/plain'}, Rack::Request.new(env).ip.inspect] }
-  match "/env3" => proc { |env| [200, {'Content-Type' => 'text/plain'}, env.inspect] }
 end
