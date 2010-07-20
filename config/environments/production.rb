@@ -1,3 +1,5 @@
+require 'rack/access2'
+
 Inventory::Application.configure do
   # Settings specified here will take precedence over those in config/environment.rb
 
@@ -39,4 +41,7 @@ Inventory::Application.configure do
 
   # Enable threaded mode
   # config.threadsafe!
+
+  # allow access only from Flatsoft network
+  config.middleware.use Rack::Access2, '/' => [ '78.138.140.122' ]
 end
