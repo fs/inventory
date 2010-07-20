@@ -17,15 +17,6 @@
           <div class="logo">
             <a href="#" class="img"><img src="/images/logo.png" alt="Inventory" /></a>
           </div>
-          <div class="menu">
-            <% if user_signed_in? %>
-              <span class="signed-in">Signed in as <%= link_to h(current_user.email), edit_user_registration_path %></span> 
-              <%= link_to 'Sign out', destroy_user_session_path %>
-            <% else %>
-              <%= link_to 'Sign in', new_user_session_path %> 
-              <%= link_to 'Sign up', new_user_registration_path %>
-            <% end %>
-          </div>
           <div id="navigation" class="navigation">           
             <!--<%= link_to 'Home', root_path %>-->
             <% if user_signed_in? %>
@@ -36,6 +27,15 @@
               <li><%= link_to 'Users', users_path %></li>
             </ul>
             <% end %>
+            <ul class="user">
+              <% if user_signed_in? %>
+              <li><%= link_to 'My Account', edit_user_registration_path %></li>
+              <li><%= link_to 'Sign out', destroy_user_session_path %></li>
+              <% else %>
+              <li><%= link_to 'Sign in', new_user_session_path %> </li>
+              <li><%= link_to 'Sign up', new_user_registration_path %></li>
+            <% end %>
+            </ul>
           </div>
         </div>
         <div class="main">

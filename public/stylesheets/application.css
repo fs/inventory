@@ -1,4 +1,4 @@
-body {background:#1e1e1e;color:#fff;font:normal 14px/1 Arial, Verdana, sans-serif;}
+body {background:#1e1e1e;color:#fff;font:normal 13px/1 Arial, Verdana, sans-serif;}
   a {color:#fff;text-decoration:underline;}
   a:hover {text-decoration:none;}
   a:visited {color:#ddd;}
@@ -30,7 +30,6 @@ body {background:#1e1e1e;color:#fff;font:normal 14px/1 Arial, Verdana, sans-seri
     border-bottom-right-radius: 10px;
     font-weight:bold;
   }
-
 	.container {width:900px;padding:0 30px; position:relative;margin:0 auto;overflow:hidden;}
 		.header {overflow:hidden;clear:both;}
 			.header div.logo {display:block;width:198px;height:80px;padding-top:15px;float:left;margin-bottom:35px;}
@@ -45,24 +44,7 @@ body {background:#1e1e1e;color:#fff;font:normal 14px/1 Arial, Verdana, sans-seri
             border:none;
             font-family:"Arial Black";
             }
-      .header div.menu {padding-top:15px;text-align:right;}
-        .header div.menu a {
-          color:#fff;
-          text-transform:uppercase;
-          font-size:14px;
-          font-family:"Arial Black";
-          font-weight:bold;
-          text-decoration:underline;
-          line-height:14px;
-          padding-left:10px;
-          display:inline-block;
-          }
-          .header div.menu .signed-in a {
-            font:normal normal 14px/1em Arial, sans-serif;
-            padding-left:0;
-            text-transform:none;
-          }
-			.header .navigation {height:30px;clear:both;font-weight:bold;font-family:"Arial Black"}
+			.header .navigation {height:30px;clear:both;font-weight:bold;font-family:"Arial Black";position:relative;}
 				.header .navigation ul {overflow:hidden;display:block;height:30px;clear:both;}
 				.header .navigation ul li {display:block;float:left;margin-right:2px;}
           .header .navigation ul li a {
@@ -75,7 +57,7 @@ body {background:#1e1e1e;color:#fff;font:normal 14px/1 Arial, Verdana, sans-seri
             text-transform:uppercase;
             line-height:8px;
             height:10px;
-            font-size:17px;
+            font-size:14px;
             -webkit-border-top-left-radius: 5px;
             -webkit-border-top-right-radius: 5px;
             -moz-border-radius-topleft: 5px;
@@ -84,22 +66,24 @@ body {background:#1e1e1e;color:#fff;font:normal 14px/1 Arial, Verdana, sans-seri
             border-top-right-radius: 5px;
             border-bottom-width:0;
             }
-          .header .navigation ul li a.current,
-          .header .navigation ul li a:hover,
-          .header .navigation ul li a:active { background:#225667; }
+      .header .navigation ul.user {overflow:hidden;display:block;height:30px;position:absolute;right:0;top:0;}
+        .header .navigation ul.user li {display:block;float:left;margin-left:2px;}
+          .header .navigation ul.user li a {background:#0E2537;border-color:#14354f;}
+            .header .navigation ul li a.current,
+            .header .navigation ul li a:hover,
+            .header .navigation ul li a:active { background:#225667; }
     .main {
       background:#225667;
       padding:35px 0;
       }
       .main h1,
       .main h2 {
-        margin-bottom:25px;
+        margin-bottom:35px;
         line-height:1;
         color:#e8e8e8;
         font-size:48px;
         font-family:"Arial Black";
         }
-        .main .user h1 {font-size:23px;}
       #error_explanation {
         margin-bottom:25px;
         color:#d24a43;
@@ -124,7 +108,7 @@ body {background:#1e1e1e;color:#fff;font:normal 14px/1 Arial, Verdana, sans-seri
             padding-left:22px;
             padding-bottom:8px;
           }
-      div.search {clear:both;overflow:hidden;width:100%;margin-bottom:25px;}
+      div.search {clear:both;overflow:hidden;width:100%;margin-bottom:20px;}
 				div.search label {display:block;padding:3px 0 4px;font-size:15px;clear:both;}
 				div.search input[type="text"] {
           width:756px;
@@ -173,11 +157,6 @@ body {background:#1e1e1e;color:#fff;font:normal 14px/1 Arial, Verdana, sans-seri
             }
             div.actions a.back {background:none;color:#fff;}
           a.btn {float:none;margin:0;}
-          input.btn {
-            display:inline-block;
-            height:24px;
-            line-height:24px;
-          }
           div.actions a {
             color:#fff;
             text-transform:uppercase;
@@ -188,16 +167,17 @@ body {background:#1e1e1e;color:#fff;font:normal 14px/1 Arial, Verdana, sans-seri
             line-height:30px;
             padding-right:10px;
             display:inline-block;
-          }
-          
+          }        
       .field {
         font-size:13px;
-        margin-bottom:15px;
+        margin-bottom:20px;
+        overflow:hidden;
         }
         .field label {
           padding-bottom:3px;
           display:inline-block;
-          font-weight:bold;
+          font-weight:normal;
+          font-size:14px;
           }
         .field input,
         .field textarea,
@@ -205,12 +185,14 @@ body {background:#1e1e1e;color:#fff;font:normal 14px/1 Arial, Verdana, sans-seri
           background:#1e1e1e;
           color:#dbdbdb;
           border:1px solid #284257;
-          height:24px;
-          line-height:23px;
+          font-size:15px;
+          font-family:Arial,sans-serif;
           }
+          .field select {padding:4px;}
+          .field select option {padding:0 6px;}
           .field input,
-          .field textarea {width:600px;padding:4px 10px;}
-            .field textarea {height:100px;}
+          .field textarea {width:600px;height:24px;line-height:23px;padding:4px 10px;}
+            .field textarea {height:80px;}
             .field input[type="checkbox"],
             .field input[type="radio"] {
               height:auto;
@@ -236,6 +218,7 @@ body {background:#1e1e1e;color:#fff;font:normal 14px/1 Arial, Verdana, sans-seri
         border-radius:5px;
         -moz-border-radius:5px;
         -webkit-border-radius:5px;
+        behavior: url(/stylesheets/border-radius.htc);
         border:#fff;
         position:relative;
         color:#000;
@@ -245,10 +228,10 @@ body {background:#1e1e1e;color:#fff;font:normal 14px/1 Arial, Verdana, sans-seri
         margin:0 10px 10px 0;
         }
         .unit.field:hover {background-image:none;}
-        .unit.field a {color:#000;}
+        .unit.field a {color:#284257;}
           .unit.field a.icon,
-          .unit.field a.icon.notebook {
-            background:url("/images/units.png") 0 -147px no-repeat;
+          .unit.field a.icon.other {
+            background:url("/images/units.png") 0 -127px no-repeat;
             width:80px;
             height:70px;
             float:left;
@@ -256,34 +239,39 @@ body {background:#1e1e1e;color:#fff;font:normal 14px/1 Arial, Verdana, sans-seri
             text-indent:-9999em;
             display:block;
             }
-            .unit.field a.icon.box {background-position:0 -216px;}
-            .unit.field a.icon.printer {background-position:0 -64px;height:75px;} 
-            .unit.field a.icon.monitor {background-position:0 -587px;height:63px;}
-            .unit.field a.icon.mouse {background-position:0 -296px;}
-            .unit.field a.icon.keyboard {background-position:0 -655px;}
-            .unit.field a.icon.server {background-position:0 -517px;}
-            .unit.field a.icon.webcam {background-position:0 -442px}
-            .unit.field a.icon.network-tools {background-position:-364px;}
+            .unit.field a.icon.notebook {background-position:0 -127px;}
+            .unit.field a.icon.server {background-position:0 -200px;}
+            .unit.field a.icon.printer {background-position:0 -60px;height:60px;} 
+            .unit.field a.icon.monitor {background-position:0 -570px;}
+            .unit.field a.icon.mouse {background-position:0 -274px;height:60px;}
+            .unit.field a.icon.keyboard {background-position:0 -637px;}
+            .unit.field a.icon.box {background-position:0 -483px;height:75px;}
+            .unit.field a.icon.webcam {background-position:0 -406px}
+            .unit.field a.icon.network-tools {background-position:0 -336px;}
             .unit.field a.icon.other {background-position:0 3px;}
           .unit.field p {margin-bottom:5px;padding-left:80px;}
-          .unit.field p.unit-name {margin-bottom:10px;}
-          .unit.field p.unit-name a {
-              color:#284257;
-              font-size:19px;
-              text-decoration:none;
-              font-weight:bold;
-              line-height:1;
-              font-family:"Arial Black";
-            }
-          .unit.field a.destroy {
-            position:absolute;
-            right:5px;
-            top:5px;
-            background:url("/images/close.png") 0 0 no-repeat;
-            height:24px;
-            width:24px;
-            text-indent:-9999em;
-            }
+          .unit.field p.unit-name {margin-bottom:8px;}
+            .unit.field p.unit-name a {
+                color:#284257;
+                font-size:19px;
+                text-decoration:none;
+                font-weight:bold;
+                line-height:1;
+                font-family:"Arial Black";
+              }
+            .unit.field a.destroy {
+              position:absolute;
+              right:10px;
+              top:10px;
+              background:url("/images/trash.png") 0 0 no-repeat;
+              height:16px;
+              width:16px;
+              text-indent:-9999em;
+              }
+        .unit.field p.description {margin-bottom:8px;line-height:1.1em;}
+        .unit.field p.room, 
+        .unit.field p.owned {font-weight:bold;color:#222;font-size:11px;}
+        .unit.field p.on-depot {font-weight:bold;font-size:11px;}
       .user.field,
       .room.field {
         background:#1a4d5e;
@@ -311,15 +299,15 @@ body {background:#1e1e1e;color:#fff;font:normal 14px/1 Arial, Verdana, sans-seri
         .room.field a.destroy {
             position:absolute;
             right:5px;
-            top:5px;
-            background:url("/images/close.png") 0 0 no-repeat;
+            top:12px;
+            background:url("/images/trash.png") 0 0 no-repeat;
             height:24px;
             width:24px;
             text-indent:-9999em;
             }
         .room.field a.edit {
           position:absolute;
-          top:9px;
+          top:13px;
           right:35px;
           color:#999;
           font-weight:bold;
@@ -331,6 +319,7 @@ body {background:#1e1e1e;color:#fff;font:normal 14px/1 Arial, Verdana, sans-seri
         border-radius:5px;
         -moz-border-radius:5px;
         -webkit-border-radius:5px;
+        behavior: url(/stylesheets/border-radius.htc);
         background:#efbf88;
         color:#284257;
         border:1px solid #e8e8e8;
@@ -353,6 +342,9 @@ body {background:#1e1e1e;color:#fff;font:normal 14px/1 Arial, Verdana, sans-seri
           }
       .pagination {
         clear:both;
+        float:left;
+        margin-top:20px;
+        width:100%;
         }
         .pagination a {
           color:#fff;
@@ -365,7 +357,7 @@ body {background:#1e1e1e;color:#fff;font:normal 14px/1 Arial, Verdana, sans-seri
           padding-right:10px;
           display:inline-block;
           }
-		.footer {padding:15px 0;background:#0e2537;clear:both;overflow:hidden;font-size:12px;line-height:1.2em;}
+		.footer {padding:15px 0;background:#0e2537;clear:both;overflow:hidden;font-size:12px;line-height:1.2em;border-bottom:1px solid #14354f;}
 			.footer .container div {float:left;width:50%;}
 			.footer p.copy {font-family:"Arial Black";text-transform:uppercase;font-weight:bold;float:right;text-align:right;width:50%;font-size:14px;}
 			

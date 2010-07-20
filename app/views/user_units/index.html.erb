@@ -7,7 +7,7 @@
 <% else %>
   <%= form_for :unit do |f| %>
     <%= f.collection_select :id, Unit.on_depot, :id, :inv_id_with_name, {:promt => true} %>
-    <%= f.submit 'Assign selected unit with user', :disable_with => 'Please, wait...', :class => 'btn' %>
+    <%= f.submit 'Assign selected unit with user', :disable_with => 'Please, wait...' %>
   <% end %>
 <% end %>
 
