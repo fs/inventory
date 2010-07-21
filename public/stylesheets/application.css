@@ -104,7 +104,7 @@ body {background:#1e1e1e;color:#fff;font:normal 13px/1 Arial, Verdana, sans-seri
           padding:0 5px;
           }
           #error_explanation ul li {
-            background:url("/images/error_li.png") 0 0 no-repeat;
+           background:url("/images/error_li.gif") 0 0 no-repeat;
             padding-left:22px;
             padding-bottom:8px;
           }
@@ -357,7 +357,16 @@ body {background:#1e1e1e;color:#fff;font:normal 13px/1 Arial, Verdana, sans-seri
           padding-right:10px;
           display:inline-block;
           }
-		.footer {padding:15px 0;background:#0e2537;clear:both;overflow:hidden;font-size:12px;line-height:1.2em;border-bottom:1px solid #14354f;}
+        .pagination a {color:#0E2537;}
+          .pagination em {text-decoration:none;font-style:normal;}
+        .pagination .next_page,
+        .pagination .previous_page {display:block;float:left;height:34px;width:35px;text-indent:-9999em;padding:0 !important;}
+        .pagination .previous_page {margin-right:10px;}
+        .pagination .previous_page {background:url("/images/pagination.png") 0 -34px no-repeat;}
+        .pagination .next_page {background:url("/images/pagination.png") right -34px no-repeat;}
+        .pagination .previous_page.disabled {background-position:0 0;}
+        .pagination .next_page.disabled {background-position:right 0;}
+      .required {font-weight:bold;font-size:21px;color:#D24A43;line-height:14px;}
+		.footer {padding:15px 0;background:#0e2537;clear:both;overflow:hidden;font-size:12px;line-height:1.2em;border-bottom:1px solid #14354F;}
 			.footer .container div {float:left;width:50%;}
 			.footer p.copy {font-family:"Arial Black";text-transform:uppercase;font-weight:bold;float:right;text-align:right;width:50%;font-size:14px;}
-			

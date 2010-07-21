@@ -4,12 +4,16 @@
   <%= f.error_messages %>
 
   <div class="field">
-    <%= f.label :full_name %><br />
-    <%= f.text_field :full_name %>
+   <%= f.label :full_name, 'Full name:' %><br />
+   <%= f.text_field :full_name %>
   </div>
 
   <div class="field">
+<<<<<<< HEAD:app/views/devise/invitations/new.html.erb
     <%= f.label :email %><br />
+=======
+    <%= f.label :email, 'Email' %><span class="required">*</span>:<br />
+>>>>>>> design:app/views/devise/invitations/new.html.erb
     <%= f.text_field :email %>
   </div>
 
