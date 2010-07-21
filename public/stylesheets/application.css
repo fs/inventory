@@ -15,7 +15,8 @@ body {background:#1e1e1e;color:#fff;font:normal 13px/1 Arial, Verdana, sans-seri
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     font-weight:bold;
-  }
+     font-family: Arial,Helvetica,sans-serif;
+}
   #alert {
     background:url("/images/error.png") 10px 5px no-repeat #cc0000;
     color:#fff;
@@ -30,50 +31,50 @@ body {background:#1e1e1e;color:#fff;font:normal 13px/1 Arial, Verdana, sans-seri
     border-bottom-right-radius: 10px;
     font-weight:bold;
   }
-	.container {width:900px;padding:0 30px; position:relative;margin:0 auto;overflow:hidden;}
-		.header {overflow:hidden;clear:both;}
-			.header div.logo {display:block;width:198px;height:80px;padding-top:15px;float:left;margin-bottom:35px;}
-				.header div.logo a {height:80px;margin-bottom:10px;display:block;text-decoration:none;}
-          .header div.logo a img {
-            font-size:26px;
-            font-weight:bold;
-            height:80px;
-            letter-spacing:3px;
-            line-height:20px;
-            text-transform:uppercase;
-            border:none;
-            font-family:"Arial Black";
-            }
-			.header .navigation {height:30px;clear:both;font-weight:bold;font-family:"Arial Black";position:relative;}
-				.header .navigation ul {overflow:hidden;display:block;height:30px;clear:both;}
-				.header .navigation ul li {display:block;float:left;margin-right:2px;}
-          .header .navigation ul li a {
-            display:block;
-            border:1px solid #2a4962;
-            padding:10px 33px;
-            color:#fff;
-            background:#284257;
-            text-decoration:none;
-            text-transform:uppercase;
-            line-height:8px;
-            height:10px;
-            font-size:14px;
-            -webkit-border-top-left-radius: 5px;
-            -webkit-border-top-right-radius: 5px;
-            -moz-border-radius-topleft: 5px;
-            -moz-border-radius-topright: 5px;
-            border-top-left-radius: 5px;
-            border-top-right-radius: 5px;
-            border-bottom-width:0;
-            }
+.container {width:900px;padding:0 30px; position:relative;margin:0 auto;overflow:hidden;}
+.header {overflow:hidden;clear:both;}
+    .header div.logo {display:block;width:198px;height:80px;padding-top:15px;float:left;margin-bottom:35px;}
+		.header div.logo a {height:80px;margin-bottom:10px;display:block;text-decoration:none;}
+            .header div.logo a img {
+                font-size:26px;
+                font-weight:bold;
+                height:80px;
+                letter-spacing:3px;
+                line-height:20px;
+                text-transform:uppercase;
+                border:none;
+                font-family:"Arial Black";
+                }
+	.header .navigation {height:30px;clear:both;font-family:"Arial Black";position:relative;}
+		.header .navigation ul {overflow:hidden;display:block;height:30px;clear:both;}
+            .header .navigation ul li {display:block;float:left;margin-right:2px;}
+              .header .navigation ul li a {
+                display:block;
+                border:1px solid #2a4962;
+                padding:10px 33px;
+                color:#fff;
+                background:#284257;
+                text-decoration:none;
+                text-transform:uppercase;
+                line-height:8px;
+                height:10px;
+                font-size:14px;
+                -webkit-border-top-left-radius: 5px;
+                -webkit-border-top-right-radius: 5px;
+                -moz-border-radius-topleft: 5px;
+                -moz-border-radius-topright: 5px;
+                border-top-left-radius: 5px;
+                border-top-right-radius: 5px;
+                border-bottom-width:0;
+                }
       .header .navigation ul.user {overflow:hidden;display:block;height:30px;position:absolute;right:0;top:0;}
         .header .navigation ul.user li {display:block;float:left;margin-left:2px;}
-          .header .navigation ul.user li a {background:#0E2537;border-color:#14354f;}
+          .header .navigation ul.user li a {background:#0E2537;border-color:#163a56;}
             .header .navigation ul li a.current,
             .header .navigation ul li a:hover,
-            .header .navigation ul li a:active { background:#225667; }
+            .header .navigation ul li a:active { background:#325864; }
     .main {
-      background:#225667;
+      background:#325864;
       padding:35px 0;
       }
       .main h1,
@@ -93,15 +94,15 @@ body {background:#1e1e1e;color:#fff;font:normal 13px/1 Arial, Verdana, sans-seri
         }
         #error_explanation h2 {
           font:normal normal 15px/1em Arial,sans-serif;
-          margin-bottom:8px;
+          margin-bottom:7px;
           background:#d24a43;
           color:#fff;
-          padding:5px;
+          padding:8px 10px;
         }
         #error_explanation ul {
           font:normal normal 13px/15px Arial,sans-serif;
           background:#fff;
-          padding:0 5px;
+          padding:0 10px;
           }
           #error_explanation ul li {
            background:url("/images/error_li.gif") 0 0 no-repeat;
@@ -162,7 +163,6 @@ body {background:#1e1e1e;color:#fff;font:normal 13px/1 Arial, Verdana, sans-seri
             text-transform:uppercase;
             font-size:14px;
             font-family:"Arial Black";
-            font-weight:bold;
             text-decoration:underline;
             line-height:30px;
             padding-right:10px;
@@ -178,14 +178,15 @@ body {background:#1e1e1e;color:#fff;font:normal 13px/1 Arial, Verdana, sans-seri
           display:inline-block;
           font-weight:normal;
           font-size:14px;
+          color:#fff;
           }
         .field input,
         .field textarea,
         .field select {       
           background:#1e1e1e;
-          color:#dbdbdb;
+          color:#bbb;
           border:1px solid #284257;
-          font-size:15px;
+          font-size:14px;
           font-family:Arial,sans-serif;
           }
           .field select {padding:4px;}
@@ -240,7 +241,7 @@ body {background:#1e1e1e;color:#fff;font:normal 13px/1 Arial, Verdana, sans-seri
             display:block;
             }
             .unit.field a.icon.notebook {background-position:0 -127px;}
-            .unit.field a.icon.server {background-position:0 -200px;}
+            .unit.field a.icon.server {background-position:0 -203px;}
             .unit.field a.icon.printer {background-position:0 -60px;height:60px;} 
             .unit.field a.icon.monitor {background-position:0 -570px;}
             .unit.field a.icon.mouse {background-position:0 -274px;height:60px;}
@@ -249,13 +250,12 @@ body {background:#1e1e1e;color:#fff;font:normal 13px/1 Arial, Verdana, sans-seri
             .unit.field a.icon.webcam {background-position:0 -406px}
             .unit.field a.icon.network-tools {background-position:0 -336px;}
             .unit.field a.icon.other {background-position:0 3px;}
-          .unit.field p {margin-bottom:5px;padding-left:80px;}
+          .unit.field p {margin-bottom:5px;padding-left:80px;line-height:1;}
           .unit.field p.unit-name {margin-bottom:8px;}
             .unit.field p.unit-name a {
                 color:#284257;
                 font-size:19px;
                 text-decoration:none;
-                font-weight:bold;
                 line-height:1;
                 font-family:"Arial Black";
               }
@@ -271,7 +271,8 @@ body {background:#1e1e1e;color:#fff;font:normal 13px/1 Arial, Verdana, sans-seri
         .unit.field p.description {margin-bottom:8px;line-height:1.1em;}
         .unit.field p.room, 
         .unit.field p.owned {font-weight:bold;color:#222;font-size:11px;}
-        .unit.field p.on-depot {font-weight:bold;font-size:11px;}
+        .unit.field p.on-depot,
+        .unit.field a.depot {font-weight:bold;font-size:11px;margin-bottom:5px;padding-left:80px;display:block;}
       .user.field,
       .room.field {
         background:#1a4d5e;
@@ -346,16 +347,18 @@ body {background:#1e1e1e;color:#fff;font:normal 13px/1 Arial, Verdana, sans-seri
         margin-top:20px;
         width:100%;
         }
-        .pagination a {
+        .pagination a,
+        .pagination em {
           color:#fff;
           text-transform:uppercase;
-          font-size:14px;
+          font-size:34px;
           font-family:"Arial Black";
           font-weight:bold;
           text-decoration:underline;
-          line-height:14px;
+          line-height:34px;
           padding-right:10px;
-          display:inline-block;
+          display:block;
+          float:left;
           }
         .pagination a {color:#0E2537;}
           .pagination em {text-decoration:none;font-style:normal;}
@@ -367,6 +370,6 @@ body {background:#1e1e1e;color:#fff;font:normal 13px/1 Arial, Verdana, sans-seri
         .pagination .previous_page.disabled {background-position:0 0;}
         .pagination .next_page.disabled {background-position:right 0;}
       .required {font-weight:bold;font-size:21px;color:#D24A43;line-height:14px;}
-		.footer {padding:15px 0;background:#0e2537;clear:both;overflow:hidden;font-size:12px;line-height:1.2em;border-bottom:1px solid #14354F;}
-			.footer .container div {float:left;width:50%;}
-			.footer p.copy {font-family:"Arial Black";text-transform:uppercase;font-weight:bold;float:right;text-align:right;width:50%;font-size:14px;}
+.footer {padding:15px 0;background:#0e2537;clear:both;overflow:hidden;font-size:12px;line-height:1.2em;border-bottom:1px solid #14354F;}
+.footer .container div {float:left;width:50%;}
+.footer p.copy {font-family:"Arial Black";text-transform:uppercase;font-weight:bold;float:right;text-align:right;width:50%;font-size:14px;}

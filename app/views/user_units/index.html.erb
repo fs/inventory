@@ -19,7 +19,7 @@
   <div class="unit field">
     <%= render :partial => unit %>
 
-    <%= link_to 'On depot', user_unit_path(@user, unit), :confirm => 'Are you sure?', :method => :delete %>
+    <%= link_to 'On depot', user_unit_path(@user, unit), :confirm => 'Are you sure?', :method => :delete, :class => 'depot' %>
   </div>
 <% end %>
 
