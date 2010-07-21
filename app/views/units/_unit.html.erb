@@ -4,9 +4,7 @@
 <p class="unit-name"><%= link_to(unit.inv_id_with_name, edit_unit_path(unit)) %></p>
 <p class="description"><%= unit.description %></p>
 
-<% if unit.on_depot? %>
-  <p class="on-depot"><%= link_to('on depot', on_depot_units_path) %></p>
-<% else %>
+<% unless unit.on_depot? %>
   <p class="room">Room <%= link_to(unit.room.name, room_path(unit.room)) %></p>
   <p class="owned">Owned by <%= link_to(unit.user.full_name, user_units_path(unit.user)) %></p>
 <% end %>
