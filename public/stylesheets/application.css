@@ -109,7 +109,7 @@ body {background:#1e1e1e;color:#fff;font:normal 13px/1 Arial, Verdana, sans-seri
             padding-left:22px;
             padding-bottom:8px;
           }
-      div.search {clear:both;overflow:hidden;width:100%;margin-bottom:20px;}
+      div.search {clear:both;overflow:hidden;width:100%;}
 				div.search label {display:block;padding:3px 0 4px;font-size:15px;clear:both;}
 				div.search input[type="text"] {
           width:756px;
@@ -268,7 +268,7 @@ body {background:#1e1e1e;color:#fff;font:normal 13px/1 Arial, Verdana, sans-seri
               width:16px;
               text-indent:-9999em;
               }
-        .unit.field p.description {margin-bottom:8px;line-height:1.2em;}
+        .unit.field p.description {margin-bottom:8px;line-height:1.1em;}
         .unit.field p.room, 
         .unit.field p.owned {font-weight:bold;color:#222;font-size:11px;}
         .unit.field p.on-depot,
