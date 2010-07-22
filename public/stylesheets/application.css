@@ -224,7 +224,7 @@ body {background:#1e1e1e;color:#fff;font:normal 13px/1 Arial, Verdana, sans-seri
         position:relative;
         color:#000;
         width:260px;
-        height:95px;
+        height:120px;
         float:left;
         margin:0 10px 10px 0;
         }
@@ -256,7 +256,7 @@ body {background:#1e1e1e;color:#fff;font:normal 13px/1 Arial, Verdana, sans-seri
                 color:#284257;
                 font-size:19px;
                 text-decoration:none;
-                line-height:1;
+                line-height:1.1em;
                 font-family:"Arial Black";
               }
             .unit.field a.destroy {
@@ -268,11 +268,26 @@ body {background:#1e1e1e;color:#fff;font:normal 13px/1 Arial, Verdana, sans-seri
               width:16px;
               text-indent:-9999em;
               }
-        .unit.field p.description {margin-bottom:8px;line-height:1.1em;}
+        .unit.field p.description {margin-bottom:8px;line-height:1.2em;}
         .unit.field p.room, 
         .unit.field p.owned {font-weight:bold;color:#222;font-size:11px;}
         .unit.field p.on-depot,
-        .unit.field a.depot {font-weight:bold;font-size:11px;margin-bottom:5px;padding-left:80px;display:block;}
+        .unit.field a.depot {
+            -moz-border-radius:10px;
+            -webkit-border-radius:10px;
+            border-radius:10px;
+            background: url("/images/arrow-right.png") right center no-repeat #284257;
+            display:block;
+            font-size:11px;
+            line-height: 12px;
+            font-weight:bold;
+            padding:5px 8px;
+            width: 60px;
+            color: #fff;
+            position: absolute;
+            left: 10px;
+            bottom: 10px;
+            }
       .user.field,
       .room.field {
         background:#1a4d5e;
