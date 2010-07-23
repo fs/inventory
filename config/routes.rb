@@ -13,5 +13,5 @@ Inventory::Application.routes.draw do
   end
   
   resources :rooms
-  root :to => 'home#index'
+  root :to => 'units#index'
 end
