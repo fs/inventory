@@ -2,13 +2,17 @@
 
 <%= render 'layouts/search' %>
 
-<% @users.each do |user| %>
-  <%= div_for(user, :class => 'field') do %>
-    <%= link_to(user_units_path(user)) do %>
-      <%= user.full_name_with_email %>, <%= pluralize(user.units.count, 'unit') %> 
-    <% end %>
-    <% if user.deletable? %>
-      <%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete, :class => 'delete' %>
+<% if @users.blank? %>
+  No users
+<% else %>
+  <% @users.each do |user| %>
+    <%= div_for(user, :class => 'field') do %>
+      <%= link_to(user_units_path(user)) do %>
+        <%= user.full_name_with_email %>, <%= pluralize(user.units.count, 'unit') %>
+      <% end %>
+      <% if user.deletable? %>
+        <%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete, :class => 'delete' %>
+      <% end %>
     <% end %>
   <% end %>
 <% end %>

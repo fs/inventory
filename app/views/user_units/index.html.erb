@@ -1,7 +1,5 @@
 <div class="user"><% title @user.full_name %></div>
 
-<%= render 'layouts/search' %>
-
 <% if @on_depot_units.blank? %>
   <p>No free units.</p>
 <% else %>
@@ -13,15 +11,20 @@
 
 <br />
 
-<% @user_units.each do |unit| %>
-  <div class="unit field">
-    <%= render :partial => unit %>
+<%= render 'layouts/search' %>
 
-    <%= link_to 'On depot', user_unit_path(@user, unit), :confirm => 'Are you sure?', :method => :delete, :class => 'depot' %>
-  </div>
+<% if @user_units.blank? %>
+  This user have no any units
+<% else %>
+  <% @user_units.each do |unit| %>
+    <div class="unit field">
+      <%= render :partial => unit %>
+
+      <%= link_to 'On depot', user_unit_path(@user, unit), :confirm => 'Are you sure?', :method => :delete, :class => 'depot' %>
+    </div>
+  <% end %>
+  <%= will_paginate @user_units %>
 <% end %>
-
-<%= will_paginate @user_units %>
 
 <div class="actions">
   <%= link_to 'Add unit', new_unit_path(:user_id => @user.id) %>
