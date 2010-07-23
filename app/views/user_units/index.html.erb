@@ -13,8 +13,6 @@
 
 <br />
 
-
-
 <% @user_units.each do |unit| %>
   <div class="unit field">
     <%= render :partial => unit %>
@@ -26,5 +24,6 @@
 <%= will_paginate @user_units %>
 
 <div class="actions">
+  <%= link_to 'Add unit', new_unit_path(:user_id => @user.id) %>
   <%= link_to 'Back', users_path %>
 </div>
