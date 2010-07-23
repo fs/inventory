@@ -138,7 +138,7 @@ body {background:#1e1e1e;color:#fff;font:normal 13px/1 Arial, Verdana, sans-seri
           -webkit-border-radius:5px;
           font-size:13px;
           }
-        div.actions {overflow:hidden;clear:both;padding-top:20px;margin-bottom:10px;line-height:17px;}
+        div.actions {overflow:hidden;clear:both;padding-top:10px;margin-bottom:10px;line-height:17px;}
           div.actions input,
           a.btn {
             float:left;
@@ -232,25 +232,35 @@ body {background:#1e1e1e;color:#fff;font:normal 13px/1 Arial, Verdana, sans-seri
         .unit.field a {color:#284257;}
           .unit.field a.icon,
           .unit.field a.icon.other {
-            background:url("/images/units.png") 0 -127px no-repeat;
-            width:80px;
-            height:70px;
+            background:url("/images/units_small.png") 0 -127px no-repeat;
+            width:55px;
+            height:60px;
             float:left;
             clear:left;
             text-indent:-9999em;
             display:block;
             }
-            .unit.field a.icon.notebook {background-position:0 -127px;}
-            .unit.field a.icon.server {background-position:0 -203px;}
-            .unit.field a.icon.printer {background-position:0 -60px;height:60px;} 
-            .unit.field a.icon.monitor {background-position:0 -570px;}
-            .unit.field a.icon.mouse {background-position:0 -274px;height:60px;}
-            .unit.field a.icon.keyboard {background-position:0 -637px;}
-            .unit.field a.icon.box {background-position:0 -483px;height:75px;}
-            .unit.field a.icon.webcam {background-position:0 -406px}
-            .unit.field a.icon.network-tools {background-position:0 -336px;}
+            .unit.field a.icon.other {height: 50px;}
+            /*.unit.field a.icon.notebook {background-position:0 -127px;}*/
+            .unit.field a.icon.notebook {background-position:0 -97px;}
+            /*.unit.field a.icon.server {background-position:0 -203px;}*/
+            .unit.field a.icon.server {background-position:0 -154px; height: 55px;}
+            /*.unit.field a.icon.printer {background-position:0 -60px; height:60px;}*/
+             .unit.field a.icon.printer {background-position:0 -50px; height:50px;}
+            /*.unit.field a.icon.monitor {background-position:0 -570px;}*/
+            .unit.field a.icon.monitor {background-position:0 -434px;}
+            /*.unit.field a.icon.mouse {background-position:0 -274px; height:60px;}*/
+            .unit.field a.icon.mouse {background-position:0 -207px; height:50px;}
+            /*.unit.field a.icon.keyboard {background-position:0 -637px;}*/
+            .unit.field a.icon.keyboard {background-position:0 -488px;}
+            /*.unit.field a.icon.box {background-position:0 -483px; height:75px;}*/
+            .unit.field a.icon.box {background-position:0 -370px;}
+            /*.unit.field a.icon.webcam {background-position:0 -406px}*/
+            .unit.field a.icon.webcam {background-position:0 -311px}
+            /*.unit.field a.icon.network-tools {background-position:0 -336px;}*/
+            .unit.field a.icon.network-tools {background-position:0 -259px; height: 50px;}
             .unit.field a.icon.other {background-position:0 3px;}
-          .unit.field p {margin-bottom:5px;padding-left:80px;line-height:1;}
+          .unit.field p {margin-bottom:5px;padding-left:70px;line-height:1;}
           .unit.field p.unit-name {margin-bottom:8px;}
             .unit.field p.unit-name a {
                 color:#284257;
@@ -268,21 +278,21 @@ body {background:#1e1e1e;color:#fff;font:normal 13px/1 Arial, Verdana, sans-seri
               width:16px;
               text-indent:-9999em;
               }
-        .unit.field p.description {margin-bottom:8px;line-height:1.1em;}
+        .unit.field p.description {margin-bottom:8px;line-height:1.2em;}
         .unit.field p.room, 
         .unit.field p.owned {font-weight:bold;color:#222;font-size:11px;}
         .unit.field p.on-depot,
         .unit.field a.depot {
-            -moz-border-radius:10px;
-            -webkit-border-radius:10px;
-            border-radius:10px;
+            -moz-border-radius:3px;
+            -webkit-border-radius:3px;
+            border-radius:3px;
             background: url("/images/arrow-right.png") right center no-repeat #284257;
             display:block;
-            font-size:11px;
+            font-size:10px;
             line-height: 12px;
             font-weight:bold;
-            padding:5px 8px;
-            width: 60px;
+            padding:4px 6px;
+            width: 55px;
             color: #fff;
             position: absolute;
             left: 10px;
