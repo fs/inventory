@@ -1,6 +1,7 @@
 require 'ostruct'
 
 class UserUnitsController < ApplicationController
+  navigation :users
   before_filter :authenticate_user!, :load_user
 
   # GET /users/1/units
