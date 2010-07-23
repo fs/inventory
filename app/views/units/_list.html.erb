@@ -1,8 +1,12 @@
-<% @units.each do |unit| %>
-  <div class="unit field">
-    <%= render :partial => unit %>
-    <%= link_to 'Destroy', unit, :confirm => 'Are you sure?', :method => :delete, :class => 'destroy', :title => 'Destroy this unit' %>
-  </div>
+<% if @units.blank? %>
+  No units
+<% else %>
+  <% @units.each do |unit| %>
+    <div class="unit field">
+      <%= render :partial => unit %>
+      <%= link_to 'Destroy', unit, :confirm => 'Are you sure?', :method => :delete, :class => 'destroy', :title => 'Destroy this unit' %>
+    </div>
+  <% end %>
 <% end %>
 
 <%= will_paginate @units %>

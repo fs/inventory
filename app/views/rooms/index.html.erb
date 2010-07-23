@@ -1,16 +1,20 @@
 <% title 'Listing rooms' %>
 
-<% @rooms.each do |room| %>
-  <div class="room field">
-    <%= link_to(room_path(room)) do %>
-      <%= room.name %> (<%= pluralize(room.units.size, 'unit') %>)
-    <% end %>
-    <br />
-    <%= link_to 'Edit', edit_room_path(room), :class => 'edit' %>
-    <% if room.deletable? %>
-      <%= link_to 'Destroy', room, :confirm => 'Are you sure?', :method => :delete, :class => 'destroy' %>
-    <% end %>
-  </div>
+<% if @rooms.blank? %>
+  No rooms
+<% else %>
+  <% @rooms.each do |room| %>
+    <div class="room field">
+      <%= link_to(room_path(room)) do %>
+        <%= room.name %> (<%= pluralize(room.units.size, 'unit') %>)
+      <% end %>
+      <br />
+      <%= link_to 'Edit', edit_room_path(room), :class => 'edit' %>
+      <% if room.deletable? %>
+        <%= link_to 'Destroy', room, :confirm => 'Are you sure?', :method => :delete, :class => 'destroy' %>
+      <% end %>
+    </div>
+  <% end %>
 <% end %>
 
 <div class="actions">
