@@ -1,6 +1,7 @@
 require 'ostruct'
 
 class UnitsController < ApplicationController
+  navigation :units
   before_filter :authenticate_user!
 
   # GET /units
@@ -14,6 +15,7 @@ class UnitsController < ApplicationController
 
   # GET /units/on_depot
   def on_depot
+    current_navigation :depot
     @units, @search = search(Unit.on_depot.includes(:user, :room))
 
     respond_to do |format|

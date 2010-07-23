@@ -1,4 +1,5 @@
 class RoomsController < ApplicationController
+  navigation :rooms
   before_filter :authenticate_user!
 
   # GET /rooms
