@@ -14,6 +14,8 @@ class Unit < ActiveRecord::Base
   before_validation :generate_next_inv_id
   before_save :reassign_user_if_on_depot
 
+  default_scope order('inv_id')
+
   def inv_id_with_name
     "##{inv_id}, #{name}"
   end
