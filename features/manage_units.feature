@@ -72,7 +72,20 @@ Feature: Manage units
     And a unit should not exist with name: "Mac mini"
     And I should see "prohibited this unit from being saved"
 
- Scenario: Updating unit with valid data
+  Scenario: Current user should be selected on new unit page by default
+    Given I am logged in as "me@timurv.ru/123456"
+    And I am on the new unit page
+    Then the "User" field should contain "User name"
+
+  Scenario: Current user should be selected on new unit page when user_id in query string
+    Given I am logged in as "me@timurv.ru/123456"
+    And a user: "Ivan" exists with full_name: "Ivan", id: 2
+    When I go to the user units page with id: 2
+    And I follow "Add unit"
+    Then I should be on the new unit page
+    And the "User" field should contain "Ivan"
+
+  Scenario: Updating unit with valid data
     Given I am logged in as "me@timurv.ru/123456"
     And a unit: "unit1" exists with name: "Mac mini", id: 1
     And I am on the edit unit page with id: 1
@@ -82,7 +95,7 @@ Feature: Manage units
     And a unit: "unit1" should exist with name: "PC box"
     And I should see "Unit was successfully updated."
 
- Scenario: Updating unit with invalid data
+  Scenario: Updating unit with invalid data
     Given I am logged in as "me@timurv.ru/123456"
     And a unit: "unit1" exists with name: "Mac mini", id: 1
     And I am on the edit unit page with id: 1
@@ -91,7 +104,7 @@ Feature: Manage units
     And a unit: "unit1" should exist with name: "Mac mini"
     And I should see "prohibited this unit from being saved"
 
- Scenario: Placing unit on depot
+  Scenario: Placing unit on depot
     Given I am logged in as "me@timurv.ru/123456"
     And a user: "user1" exists
     And a unit: "unit1" exists with name: "Mac mini", user: user "user1", on_depot: false, id: 1
@@ -101,7 +114,7 @@ Feature: Manage units
     Then I should be on the units page
     And a unit: "unit1" should be on depot
 
- Scenario: Deleting unit
+  Scenario: Deleting unit
     Given I am logged in as "me@timurv.ru/123456"
     And a unit: "unit1" exists with name: "Mac mini", id: 1
     And I am on the units page
