@@ -17,25 +17,9 @@
           <div class="logo">
             <a href="/" class="img"><img src="/images/logo.png" alt="Inventory" /></a>
           </div>
-          <div id="navigation" class="navigation">           
-            <!--<%= link_to 'Home', root_path %>-->
-            <% if user_signed_in? %>
-            <ul>
-              <li><%= link_to 'Units', units_path %></li>
-              <li><%= link_to 'Depot', on_depot_units_path %></li>
-              <li><%= link_to 'Rooms', rooms_path %></li>
-              <li><%= link_to 'Users', users_path %></li>
-            </ul>
-            <% end %>
-            <ul class="user">
-              <% if user_signed_in? %>
-              <li><%= link_to 'My Account', edit_user_registration_path %></li>
-              <li><%= link_to 'Sign out', destroy_user_session_path %></li>
-              <% else %>
-              <li><%= link_to 'Sign in', new_user_session_path %> </li>
-              <li><%= link_to 'Sign up', new_user_registration_path %></li>
-            <% end %>
-            </ul>
+          <div id="navigation" class="navigation">
+            <%= render_navigation(:context => :main) %>
+            <%= render_navigation(:context => :user) %>
           </div>
         </div>
         <div class="main">

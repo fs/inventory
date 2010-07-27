@@ -1,6 +1,7 @@
 require 'ostruct'
 
 class UsersController < ApplicationController
+  navigation :users
   before_filter :authenticate_user!
 
   # GET /users
