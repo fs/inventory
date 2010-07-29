@@ -10,6 +10,7 @@ class Unit < ActiveRecord::Base
   validates :unit_type, :presence => true
   validates :room_id, :presence => true
   validates :user_id, :presence => true
+  validates :out_of_order_note, :presence => true, :if => :out_of_order_note_requried?
 
   before_validation :generate_next_inv_id
   before_save :reassign_user_if_on_depot
@@ -45,5 +46,9 @@ class Unit < ActiveRecord::Base
 
   def css_class
     unit_type.parameterize
+  end
+
+  def out_of_order_note_requried?
+    out_of_order == true
   end
 end

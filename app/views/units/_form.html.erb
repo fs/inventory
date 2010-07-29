@@ -1,3 +1,13 @@
+<% content_for :head do %>
+  <%= javascript_tag do %>
+    $(function () {
+      $('#unit_out_of_order').change(function () {
+        $('#unit_out_of_order_note_div').toggle(this.checked);
+      })
+    });
+  <% end %>
+<% end %>
+
 <%= form_for(@unit) do |f| %>
   <% if @unit.errors.any? %>
     <div id="error_explanation">
@@ -20,8 +30,8 @@
     <%= f.text_field :inv_id %>
   </div>
   <div class="field">
-   <%= f.label :name, 'Name' %><span class="required">*</span>:<br />
-   <%= f.text_field :name %>
+    <%= f.label :name, 'Name' %><span class="required">*</span>:<br />
+    <%= f.text_field :name %>
   </div>
   <div class="field">
     <%= f.label :description, 'Description' %><span class="required">*</span>:<br />
@@ -39,7 +49,14 @@
     <%= f.check_box :on_depot %>
     <%= f.label :on_depot %>
   </div>
-
+  <div class="field">
+    <%= f.check_box :out_of_order %>
+    <%= f.label :out_of_order %>
+  </div>
+  <div id="unit_out_of_order_note_div" class="field" style="display: <%= @unit.out_of_order_note_requried? ? 'block' : 'none' %>">
+    <%= f.label :out_of_order_note %><span class="required">*</span>:<br />
+    <%= f.text_area :out_of_order_note %>
+  </div>
   <div class="actions">
     <%= f.submit :disable_with => 'Please, wait...' %>  <%= link_to 'Back', :back %>
   </div>

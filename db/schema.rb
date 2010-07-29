@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100716144818) do
+ActiveRecord::Schema.define(:version => 20100729122910) do
 
   create_table "rooms", :force => true do |t|
     t.string   "name"
@@ -24,9 +24,11 @@ ActiveRecord::Schema.define(:version => 20100716144818) do
     t.text     "description"
     t.integer  "user_id"
     t.integer  "room_id"
-    t.boolean  "on_depot",    :default => false
+    t.boolean  "on_depot",          :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "out_of_order",      :default => false
+    t.text     "out_of_order_note"
   end
 
   add_index "units", ["inv_id"], :name => "index_units_on_inv_id"
