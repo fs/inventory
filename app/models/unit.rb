@@ -6,7 +6,6 @@ class Unit < ActiveRecord::Base
 
   validates :inv_id, :presence => true, :uniqueness => true, :numericality => true
   validates :name, :presence => true
-  validates :description, :presence => true
   validates :unit_type, :presence => true
   validates :room_id, :presence => true
   validates :user_id, :presence => true
