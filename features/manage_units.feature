@@ -101,7 +101,7 @@ Feature: Manage units
     And I am on the edit unit page with id: 1
     And I fill in "Name" with ""
     And I press "Update Unit"
-    And a unit: "unit1" should exist with name: "Mac mini"
+    Then a unit: "unit1" should exist with name: "Mac mini"
     And I should see "prohibited this unit from being saved"
 
   Scenario: Placing unit on depot
@@ -112,7 +112,7 @@ Feature: Manage units
     When I check "On depot"
     And I press "Update Unit"
     Then I should be on the units page
-    And a unit: "unit1" should be on depot
+    And a unit: "unit1" should exist with on_depot: true, user: user "admin"
 
   Scenario: Deleting unit
     Given I am logged in as "me@timurv.ru/123456"

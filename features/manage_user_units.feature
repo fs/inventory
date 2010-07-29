@@ -18,5 +18,5 @@ Feature: Manage user units
    When I follow "On depot"
    Then I should be on the user units page with id: 2
    And I should see "Unit placed on depot."
-   And a unit: "unit1" should be on depot
+   And a unit: "unit1" should exist with on_depot: true, user: user "admin"
 

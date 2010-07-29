@@ -43,7 +43,7 @@ Feature: Manage rooms
     And I am on the edit room page with id: 1
     And I fill in "Name" with ""
     And I press "Update Room"
-    And I should see "prohibited this room from being saved"
+    Then I should see "prohibited this room from being saved"
     And a room: "202" should exist with name: "Room name"
 
  Scenario: Viewing room with units
