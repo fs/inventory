@@ -1,8 +1,8 @@
 require 'ostruct'
 
 class UsersController < ApplicationController
-  navigation :users
   before_filter :authenticate_user!
+  load_and_authorize_resource
 
   # GET /users
   def index
@@ -15,7 +15,7 @@ class UsersController < ApplicationController
 
   # DELETE /users/1
   def destroy
-    @user = User.find(params[:id])
+#    @user = User.find(params[:id])
 
     if @user.deletable?
       @user.destroy

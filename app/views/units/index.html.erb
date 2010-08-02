@@ -4,5 +4,7 @@
 <%= render 'list' %>
 
 <div class="actions">
-  <%= link_to 'New Unit', new_unit_path %>
+  <% if can?(:manage, Unit) %>
+    <%= link_to 'New Unit', new_unit_path %>
+  <% end %>
 </div>

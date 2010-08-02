@@ -4,7 +4,9 @@
   <% @units.each do |unit| %>
     <div class="unit field">
       <%= render :partial => unit %>
-      <%= link_to 'Destroy', unit, :confirm => 'Are you sure?', :method => :delete, :class => 'destroy', :title => 'Destroy this unit' %>
+      <% if can?(:manage, unit) %>
+        <%= link_to 'Destroy', unit, :confirm => 'Are you sure?', :method => :delete, :class => 'destroy', :title => 'Destroy this unit' %>
+      <% end %>
     </div>
   <% end %>
 <% end %>

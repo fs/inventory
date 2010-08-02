@@ -11,7 +11,7 @@ Feature: Manage rooms
     And I should see "203"
 
   Scenario: Create new room with valid data
-    Given I am logged in as "me@timurv.ru/123456"
+    Given I am logged in as "me@timurv.ru/123456" with "admin" role
     And I am on the new room page
     When I fill in "Name" with "Room name"
     And I press "Create"
@@ -20,7 +20,7 @@ Feature: Manage rooms
     And a room should exist with name: "Room name"
 
   Scenario: Create new room with invalid data
-    Given I am logged in as "me@timurv.ru/123456"
+    Given I am logged in as "me@timurv.ru/123456" with "admin" role
     And I am on the new room page
     When I fill in "Name" with ""
     And I press "Create"
@@ -28,7 +28,7 @@ Feature: Manage rooms
     And a room should not exist with name: "Room name"
 
  Scenario: Updating room with valid data
-    Given I am logged in as "me@timurv.ru/123456"
+    Given I am logged in as "me@timurv.ru/123456" with "admin" role
     And a room: "202" exists with name: "Room name", id: 1
     And I am on the edit room page with id: 1
     And I fill in "Name" with "New room name"
@@ -38,7 +38,7 @@ Feature: Manage rooms
     And a room: "202" should exist with name: "New room name"
 
  Scenario: Updating room with invalid data
-    Given I am logged in as "me@timurv.ru/123456"
+    Given I am logged in as "me@timurv.ru/123456" with "admin" role
     And a room: "202" exists with name: "Room name", id: 1
     And I am on the edit room page with id: 1
     And I fill in "Name" with ""
@@ -55,7 +55,7 @@ Feature: Manage rooms
     Then I should see "iMac"
 
  Scenario: Deleting room without units
-    Given I am logged in as "me@timurv.ru/123456"
+    Given I am logged in as "me@timurv.ru/123456" with "admin" role
     And a room: "202" exists with name: "202"
     And I am on the rooms page
     When I follow "Destroy"
@@ -65,7 +65,7 @@ Feature: Manage rooms
  # We fetching url directly b/c Destory link hidden
  #
  Scenario: Deleting room with units
-    Given I am logged in as "me@timurv.ru/123456"
+    Given I am logged in as "me@timurv.ru/123456" with "admin" role
     And a room: "202" exists with name: "202", id: 1
     And a unit exists with room: room "202"
     When I send "DELETE" request to the room page with id: 1

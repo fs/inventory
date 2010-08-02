@@ -1,7 +1,13 @@
 <%= link_to(unit.name, edit_unit_path(unit), :class => "icon #{unit.css_class}") %>
 <!-- todo: ICONS - ipod, box, computer, connections-->
 
-<p class="unit-name"><%= link_to(unit.inv_id_with_name, edit_unit_path(unit)) %></p>
+<p class="unit-name">
+  <% if can?(:manage, unit) %>
+    <%= link_to(unit.inv_id_with_name, edit_unit_path(unit)) %>
+  <% else %>
+    <%= unit.inv_id_with_name %>
+  <% end %>
+</p>
 <p class="description"><%= unit.description %></p>
 
 <% unless unit.on_depot? %>

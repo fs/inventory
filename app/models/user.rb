@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   include Pacecar
 
+  has_and_belongs_to_many :roles
   has_many :units
 
   devise :database_authenticatable, :registerable,
@@ -18,4 +19,10 @@ class User < ActiveRecord::Base
     units.count == 0
   end
 
+  def has_role?(role_sym)
+    return true if role_sym == :user && !new_record?
+    return true if role_sym == :visitor && new_record?
+
+    roles.any? { |r| r.name.underscore.to_sym == role_sym }
+  end
 end

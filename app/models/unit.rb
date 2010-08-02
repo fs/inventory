@@ -28,7 +28,7 @@ class Unit < ActiveRecord::Base
 
   def reassign_user_if_on_depot
     if on_depot?
-      self.user = User.admin.first
+      self.user = User.includes(:roles).where(:roles => {:name => 'admin'}).first
     end
   end
 

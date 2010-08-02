@@ -1,6 +1,6 @@
 class RoomsController < ApplicationController
-  navigation :rooms
   before_filter :authenticate_user!
+  load_and_authorize_resource
 
   # GET /rooms
   def index
@@ -13,7 +13,7 @@ class RoomsController < ApplicationController
 
   # GET /rooms/1
   def show
-    @room = Room.find(params[:id])
+#    @room = Room.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -22,7 +22,7 @@ class RoomsController < ApplicationController
 
   # GET /rooms/new
   def new
-    @room = Room.new
+#    @room = Room.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -31,12 +31,12 @@ class RoomsController < ApplicationController
 
   # GET /rooms/1/edit
   def edit
-    @room = Room.find(params[:id])
+#    @room = Room.find(params[:id])
   end
 
   # POST /rooms
   def create
-    @room = Room.new(params[:room])
+#    @room = Room.new(params[:room])
 
     respond_to do |format|
       if @room.save
@@ -49,7 +49,7 @@ class RoomsController < ApplicationController
 
   # PUT /rooms/1
   def update
-    @room = Room.find(params[:id])
+#    @room = Room.find(params[:id])
 
     respond_to do |format|
       if @room.update_attributes(params[:room])

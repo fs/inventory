@@ -10,6 +10,7 @@ gem 'devise_invitable', :git => 'http://github.com/rymai/devise_invitable.git'
 gem 'will_paginate', :git => 'git://github.com/mislav/will_paginate.git', :branch => 'rails3'
 gem 'pacecar', '1.3.0'
 gem 'simple-navigation'
+gem 'cancan'
 
 # Heroku hack b/c we don't want use these gem on heroku env
 unless HEROKU

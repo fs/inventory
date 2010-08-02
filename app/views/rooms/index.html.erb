@@ -9,14 +9,18 @@
         <%= room.name %> (<%= pluralize(room.units.size, 'unit') %>)
       <% end %>
       <br />
-      <%= link_to 'Edit', edit_room_path(room), :class => 'edit' %>
-      <% if room.deletable? %>
-        <%= link_to 'Destroy', room, :confirm => 'Are you sure?', :method => :delete, :class => 'destroy' %>
+      <% if can?(:manage, room) %>
+        <%= link_to 'Edit', edit_room_path(room), :class => 'edit' %>
+        <% if room.deletable? %>
+          <%= link_to 'Destroy', room, :confirm => 'Are you sure?', :method => :delete, :class => 'destroy' %>
+        <% end %>
       <% end %>
     </div>
   <% end %>
 <% end %>
 
 <div class="actions">
-  <%= link_to 'New Room', new_room_path %>
+  <% if can?(:create, Room) %>
+    <%= link_to 'New Room', new_room_path %>
+  <% end %>
 </div>

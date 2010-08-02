@@ -27,7 +27,7 @@ Feature: Manage users
     And I should not see "Ivan"
 
  Scenario: Deleting user without units
-    Given I am logged in as "me@timurv.ru/123456"
+    Given I am logged in as "me@timurv.ru/123456" with "admin" role
     And a user: "Ivan" exists with full_name: "Ivan", id: 2
     And I am on the users page
     When I follow "Destroy" within "div#user_2"
@@ -38,7 +38,7 @@ Feature: Manage users
  # We fetching url directly b/c Destory link hidden
  #
  Scenario: Deleting user with units
-    Given I am logged in as "me@timurv.ru/123456"
+    Given I am logged in as "me@timurv.ru/123456" with "admin" role
     And a user: "Ivan" exists with full_name: "Ivan", id: 2
     And a unit exists with name: "iMac", user: user "Ivan"
     When I send "DELETE" request to the user page with id: 2

@@ -6,7 +6,9 @@
   </div>
 <% end %>
 <div class="actions">
-  <%= link_to 'Add unit', new_unit_path(:room_id => @room) %> 
-  <%= link_to 'Edit', edit_room_path(@room) %> 
+  <% if can?(:manage, @room) %>
+    <%= link_to 'Add unit', new_unit_path(:room_id => @room) %>
+    <%= link_to 'Edit', edit_room_path(@room) %>
+  <% end %>
   <%= link_to 'Back', rooms_path %>
 </div>

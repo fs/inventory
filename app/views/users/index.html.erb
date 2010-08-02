@@ -10,7 +10,7 @@
       <%= link_to(user_units_path(user)) do %>
         <%= user.full_name_with_email %>, <%= pluralize(user.units.count, 'unit') %>
       <% end %>
-      <% if user.deletable? %>
+      <% if can?(:manage, user) && user.deletable? %>
         <%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete, :class => 'delete' %>
       <% end %>
     <% end %>
@@ -18,7 +18,9 @@
 <% end %>
 
 <div class="actions">
-  <%= link_to 'Invite users', new_user_invitation_path %>
+  <% if can?(:manage, User) %>
+    <%= link_to 'Invite users', new_user_invitation_path %>
+  <% end %>
 </div>
 
 <%= will_paginate @posts %>

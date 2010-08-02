@@ -1,8 +1,8 @@
 require 'ostruct'
 
 class UnitsController < ApplicationController
-  navigation :units
   before_filter :authenticate_user!
+  load_and_authorize_resource
 
   # GET /units
   def index
@@ -15,7 +15,6 @@ class UnitsController < ApplicationController
 
   # GET /units/on_depot
   def on_depot
-    current_navigation :depot
     @units, @search = search(Unit.on_depot.includes(:user, :room))
 
     respond_to do |format|
@@ -36,12 +35,12 @@ class UnitsController < ApplicationController
 
   # GET /units/1/edit
   def edit
-    @unit = Unit.find(params[:id])
+#    @unit = Unit.find(params[:id])
   end
 
   # POST /units
   def create
-    @unit = Unit.new(params[:unit])
+#    @unit = Unit.new(params[:unit])
 
     respond_to do |format|
       if @unit.save
@@ -54,7 +53,7 @@ class UnitsController < ApplicationController
 
   # PUT /units/1
   def update
-    @unit = Unit.find(params[:id])
+#    @unit = Unit.find(params[:id])
 
     respond_to do |format|
       if @unit.update_attributes(params[:unit])
@@ -67,7 +66,7 @@ class UnitsController < ApplicationController
 
   # DELETE /units/1
   def destroy
-    @unit = Unit.find(params[:id])
+#    @unit = Unit.find(params[:id])
     @unit.destroy
 
     respond_to do |format|

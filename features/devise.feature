@@ -1,7 +1,7 @@
 Feature: Devise
 
   Scenario: User sign in
-    Given a user: "admin" exists with email: "me@timurv.ru", password: "123456", admin: "true"
+    Given a user: "admin" exists with email: "me@timurv.ru", password: "123456"
     When I go to the new user session page
     And I fill in "user_email" with "me@timurv.ru"
     And I fill in "user_password" with "123456"
