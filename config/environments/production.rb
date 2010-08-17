@@ -1,4 +1,5 @@
 require 'rack/access2'
+require 'resolv'
 
 Inventory::Application.configure do
   # Settings specified here will take precedence over those in config/environment.rb
@@ -43,5 +44,5 @@ Inventory::Application.configure do
   # config.threadsafe!
 
   # allow access only from Flatsoft network
-  config.middleware.use Rack::Access2, '/' => [ '78.138.140.122' ]
+  config.middleware.use Rack::Access2, '/' => [ Resolv.getaddress('ts.flatsoft.com') ]
 end
