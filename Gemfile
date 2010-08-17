@@ -1,4 +1,4 @@
-HEROKU = ENV['USER'].match(/^repo\d+/)
+#HEROKU = (ENV.include?('ENV') && ENV['USER'].match(/^repo\d+/)) || ENV.include?('HEROKU_TYPE')
 
 source 'http://rubygems.org'
 
@@ -13,7 +13,7 @@ gem 'simple-navigation', '2.7.1'
 gem 'cancan', '1.3.2'
 
 # Heroku hack b/c we don't want use these gem on heroku env
-unless HEROKU
+#unless HEROKU
   group :test do
     gem 'redgreen', '1.2.2'
     gem 'rr', '0.10.9'
@@ -29,4 +29,4 @@ unless HEROKU
 
     gem 'ruby-debug', '0.10.3'
   end
-end
+#end
