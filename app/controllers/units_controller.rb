@@ -10,6 +10,12 @@ class UnitsController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
+      format.csv do
+        render :text => Unit.report_table(:all,
+          :only => [:unit_type, :inv_id, :name, :description, :on_depot],
+          :include => {:user => {:only => [:full_name]}}
+        ).as(:csv)
+      end
     end
   end
 

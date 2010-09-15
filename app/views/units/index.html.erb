@@ -7,4 +7,6 @@
   <% if can?(:manage, Unit) %>
     <%= link_to 'New Unit', new_unit_path %>
   <% end %>
+
+  <%= link_to 'Export all as CSV', units_path(:format => :csv) %>
 </div>

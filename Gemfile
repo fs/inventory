@@ -11,6 +11,7 @@ gem 'will_paginate', :git => 'git://github.com/mislav/will_paginate.git', :branc
 gem 'pacecar', '1.3.0'
 gem 'simple-navigation', '2.7.1'
 gem 'cancan', '1.3.2'
+gem 'acts_as_reportable', '1.1.1', :require => 'ruport/acts_as_reportable'
 
 # Heroku hack b/c we don't want use these gem on heroku env
 #unless HEROKU

@@ -16,6 +16,8 @@ class Unit < ActiveRecord::Base
 
   default_scope order('inv_id')
 
+  acts_as_reportable
+  
   def inv_id_with_name
     "##{inv_id}, #{name}"
   end
