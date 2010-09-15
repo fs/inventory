@@ -18,7 +18,7 @@ gem 'cancan', '1.3.2'
     gem 'redgreen', '1.2.2'
     gem 'rr', '0.10.9'
     gem 'factory_girl_rails'
-    gem 'pickle', :git => 'git://github.com/codegram/pickle.git', :ref => '929ee633'
+    gem 'pickle'
 
     gem "rspec-rails", ">= 2.0.0.beta.17"
     gem 'cucumber', '0.8.5'
