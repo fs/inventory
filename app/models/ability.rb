@@ -6,7 +6,9 @@ class Ability
 
     alias_action :index, :on_depot, :to => :read
 
-    if user.has_role? :admin
+    if user.has_role? :super_admin
+      can :manage, :all
+    elsif user.has_role? :admin
       can :manage, :all
     elsif user.has_role? :user
       can :read, [Unit, Room, User]
